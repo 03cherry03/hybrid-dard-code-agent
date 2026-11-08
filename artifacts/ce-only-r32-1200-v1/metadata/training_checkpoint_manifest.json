@@ -1,0 +1,32 @@
+{
+  "files": {
+    "README.md": "4a8c4ebd7dee1167daed84ebe40ec6360829a88964da76877278927cd941fb05",
+    "adapter_config.json": "a50049c3579d78e5b50c80a37f0e92f86b4af0ff061b5eadfee5621fc73727bf",
+    "adapter_model.safetensors": "1c6d3a14b135a47a9f79eb81a547e0bee128777cf19ad85efde372907f2f83f5",
+    "added_tokens.json": "db55023ee19ecb03d21575a6a9e1abba32d719943d3905de7f57dbbb65e7ea67",
+    "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "rng-rank-0000.pt": "5ea6ffc6c2b72ac157bab7fb1651fec7ea54eabaf7d0fb49dde30be85ae25532",
+    "rng-rank-0001.pt": "74b15dfbec29e42add3f1e6a66b8e5271916e9a2c4de76574c6224c1afd9c03d",
+    "rng-rank-0002.pt": "c6f0af978821971616dc3d4b94e9c63098702f3c80400fc39fb70a4df3d8728e",
+    "rng-rank-0003.pt": "f6462c80e7e04fca5d4cb2105c9de862e9114310b9b7d61e0dd6106d23c64f40",
+    "special_tokens_map.json": "a535749ff072dfbeecb96792b0310e8dd37f979e4478105ff90317fcf4322f7e",
+    "tokenizer_config.json": "78a5181c52d3b1993e3dcd47051bd6784f64e9609ffe1700cd8d05c3314241ea",
+    "training_config.json": "26dd6b37f4c534563c3307c2452676519f37def46be464d95d596443216aea58",
+    "training_state.pt": "f4ace8762ae212413069d378692b4f38c3ea13b3df2b27f9bc765c69dc412378",
+    "vocab.json": "87a257b04b17642a0688c98cd1df89c398bda4fee532d6f88b38a659ecb4ac8d"
+  },
+  "metadata": {
+    "base_model": "apple/DiffuCoder-7B-cpGRPO",
+    "base_revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+    "counters": {
+      "epoch": 2,
+      "examples_seen_global": 9600,
+      "global_step": 1200,
+      "microbatches_seen_per_rank": 2400,
+      "next_batch": 616
+    },
+    "training_fingerprint": "0d8d8a8a517969b241231dfd75c965b99c23c5f921e7c4427fc5cf2860dbc85f",
+    "world_size": 4
+  },
+  "schema_version": 1
+}

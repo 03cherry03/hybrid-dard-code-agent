@@ -1,0 +1,6 @@
+# Local preparation/controller dependencies. The pinned official parser package
+# is installed separately with --no-deps for its standalone grading modules.
+datasets==3.6.0
+pyarrow==20.0.0
+numpy==1.26.4
+unidiff==0.7.5

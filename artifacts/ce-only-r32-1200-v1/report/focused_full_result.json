@@ -1,0 +1,1085 @@
+{
+  "final": [
+    {
+      "rows": [
+        {
+          "by_language": {
+            "cpp": {
+              "cases": 55,
+              "mean_generation_seconds": 2.304964327272727,
+              "p95_generation_seconds": 4.1549,
+              "pass_rate": 0.7636363636363637,
+              "passed": 42
+            },
+            "js": {
+              "cases": 55,
+              "mean_generation_seconds": 1.3412731454545455,
+              "p95_generation_seconds": 3.128178,
+              "pass_rate": 0.8,
+              "passed": 44
+            },
+            "py": {
+              "cases": 113,
+              "mean_generation_seconds": 1.2973609026548674,
+              "p95_generation_seconds": 3.229633,
+              "pass_rate": 0.6637168141592921,
+              "passed": 75
+            },
+            "rs": {
+              "cases": 50,
+              "mean_generation_seconds": 1.53697984,
+              "p95_generation_seconds": 2.915445,
+              "pass_rate": 0.74,
+              "passed": 37
+            }
+          },
+          "candidate": {
+            "adapter": null,
+            "dard": {
+              "block_size": 128,
+              "compact_queries": true,
+              "diagnostics": "summary",
+              "max_step_records": 0,
+              "rectangular_attention": true,
+              "steps_per_block": 16,
+              "tau_c": 0.5,
+              "tau_u": 0.8,
+              "temperature": 0,
+              "top_p": 1,
+              "transfer_limit": 0
+            },
+            "decoder": "ar",
+            "forward_budget": 512,
+            "id": "ar-7f348bc3385bc1e4",
+            "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+            "prefix": "code_fence",
+            "revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+            "standard_steps": 1,
+            "tokens": 512
+          },
+          "cases": 273,
+          "mean_generation_seconds": 1.5530909706959708,
+          "p95_generation_seconds": 3.486925,
+          "pass_rate": 0.7252747252747253,
+          "passed": 198
+        },
+        {
+          "by_language": {
+            "cpp": {
+              "cases": 55,
+              "mean_generation_seconds": 1.4204696363636364,
+              "p95_generation_seconds": 1.664601,
+              "pass_rate": 0.03636363636363636,
+              "passed": 2
+            },
+            "js": {
+              "cases": 55,
+              "mean_generation_seconds": 1.3546558363636363,
+              "p95_generation_seconds": 1.645988,
+              "pass_rate": 0.03636363636363636,
+              "passed": 2
+            },
+            "py": {
+              "cases": 113,
+              "mean_generation_seconds": 1.2643376017699115,
+              "p95_generation_seconds": 1.556098,
+              "pass_rate": 0.061946902654867256,
+              "passed": 7
+            },
+            "rs": {
+              "cases": 50,
+              "mean_generation_seconds": 1.43479754,
+              "p95_generation_seconds": 1.650655,
+              "pass_rate": 0.0,
+              "passed": 0
+            }
+          },
+          "candidate": {
+            "adapter": {
+              "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200/training/checkpoints/step-00001200",
+              "sha256": {
+                "adapter_config.json": "a50049c3579d78e5b50c80a37f0e92f86b4af0ff061b5eadfee5621fc73727bf",
+                "adapter_model.safetensors": "1c6d3a14b135a47a9f79eb81a547e0bee128777cf19ad85efde372907f2f83f5"
+              }
+            },
+            "dard": {
+              "block_size": 128,
+              "compact_queries": true,
+              "completion_policy": "legacy_force",
+              "completion_verification_steps": 2,
+              "diagnostics": "summary",
+              "max_step_records": 0,
+              "rectangular_attention": true,
+              "steps_per_block": 16,
+              "tau_c": 0.5,
+              "tau_u": 0.8,
+              "temperature": 0.0,
+              "top_p": 1.0,
+              "transfer_limit": 0
+            },
+            "decoder": "standard",
+            "forward_budget": 512,
+            "id": "standard-5a4bd2d0c4972b81-trained",
+            "model": "apple/DiffuCoder-7B-cpGRPO",
+            "prefix": "code_fence",
+            "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+            "standard_steps": 16,
+            "tokens": 512
+          },
+          "cases": 273,
+          "mean_generation_seconds": 1.3452085238095237,
+          "p95_generation_seconds": 1.645988,
+          "pass_rate": 0.040293040293040296,
+          "passed": 11
+        },
+        {
+          "by_language": {
+            "cpp": {
+              "cases": 55,
+              "mean_generation_seconds": 2.0202838181818183,
+              "p95_generation_seconds": 3.694495,
+              "pass_rate": 0.4,
+              "passed": 22
+            },
+            "js": {
+              "cases": 55,
+              "mean_generation_seconds": 1.5885953636363637,
+              "p95_generation_seconds": 2.15864,
+              "pass_rate": 0.5454545454545454,
+              "passed": 30
+            },
+            "py": {
+              "cases": 113,
+              "mean_generation_seconds": 1.6659340796460176,
+              "p95_generation_seconds": 2.638756,
+              "pass_rate": 0.415929203539823,
+              "passed": 47
+            },
+            "rs": {
+              "cases": 50,
+              "mean_generation_seconds": 1.8676298,
+              "p95_generation_seconds": 2.903066,
+              "pass_rate": 0.28,
+              "passed": 14
+            }
+          },
+          "candidate": {
+            "adapter": {
+              "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200/training/checkpoints/step-00001200",
+              "sha256": {
+                "adapter_config.json": "a50049c3579d78e5b50c80a37f0e92f86b4af0ff061b5eadfee5621fc73727bf",
+                "adapter_model.safetensors": "1c6d3a14b135a47a9f79eb81a547e0bee128777cf19ad85efde372907f2f83f5"
+              }
+            },
+            "dard": {
+              "block_size": 128,
+              "compact_queries": true,
+              "completion_policy": "resample_then_verify",
+              "completion_verification_steps": 2,
+              "diagnostics": "summary",
+              "max_step_records": 0,
+              "rectangular_attention": true,
+              "steps_per_block": 64,
+              "tau_c": 0.4,
+              "tau_u": 0.75,
+              "temperature": 0.0,
+              "top_p": 1.0,
+              "transfer_limit": 8
+            },
+            "decoder": "dard",
+            "forward_budget": 512,
+            "id": "dard-84292bb36a6aa4c8-trained",
+            "model": "apple/DiffuCoder-7B-cpGRPO",
+            "prefix": "code_fence",
+            "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+            "standard_steps": 1,
+            "tokens": 512
+          },
+          "cases": 273,
+          "mean_generation_seconds": 1.7586827692307692,
+          "p95_generation_seconds": 2.817588,
+          "pass_rate": 0.4139194139194139,
+          "passed": 113
+        }
+      ],
+      "seed": 20261111
+    },
+    {
+      "rows": [
+        {
+          "by_language": {
+            "cpp": {
+              "cases": 55,
+              "mean_generation_seconds": 2.3160536,
+              "p95_generation_seconds": 4.154197,
+              "pass_rate": 0.7636363636363637,
+              "passed": 42
+            },
+            "js": {
+              "cases": 55,
+              "mean_generation_seconds": 1.3421667454545454,
+              "p95_generation_seconds": 3.129985,
+              "pass_rate": 0.8,
+              "passed": 44
+            },
+            "py": {
+              "cases": 113,
+              "mean_generation_seconds": 1.2960969203539823,
+              "p95_generation_seconds": 3.21493,
+              "pass_rate": 0.6637168141592921,
+              "passed": 75
+            },
+            "rs": {
+              "cases": 50,
+              "mean_generation_seconds": 1.52160324,
+              "p95_generation_seconds": 2.975122,
+              "pass_rate": 0.74,
+              "passed": 37
+            }
+          },
+          "candidate": {
+            "adapter": null,
+            "dard": {
+              "block_size": 128,
+              "compact_queries": true,
+              "diagnostics": "summary",
+              "max_step_records": 0,
+              "rectangular_attention": true,
+              "steps_per_block": 16,
+              "tau_c": 0.5,
+              "tau_u": 0.8,
+              "temperature": 0,
+              "top_p": 1,
+              "transfer_limit": 0
+            },
+            "decoder": "ar",
+            "forward_budget": 512,
+            "id": "ar-7f348bc3385bc1e4",
+            "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+            "prefix": "code_fence",
+            "revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+            "standard_steps": 1,
+            "tokens": 512
+          },
+          "cases": 273,
+          "mean_generation_seconds": 1.5521656886446886,
+          "p95_generation_seconds": 3.512526,
+          "pass_rate": 0.7252747252747253,
+          "passed": 198
+        },
+        {
+          "by_language": {
+            "cpp": {
+              "cases": 55,
+              "mean_generation_seconds": 1.4159751636363636,
+              "p95_generation_seconds": 1.662099,
+              "pass_rate": 0.03636363636363636,
+              "passed": 2
+            },
+            "js": {
+              "cases": 55,
+              "mean_generation_seconds": 1.3523756363636363,
+              "p95_generation_seconds": 1.637225,
+              "pass_rate": 0.03636363636363636,
+              "passed": 2
+            },
+            "py": {
+              "cases": 113,
+              "mean_generation_seconds": 1.2501839292035397,
+              "p95_generation_seconds": 1.459906,
+              "pass_rate": 0.061946902654867256,
+              "passed": 7
+            },
+            "rs": {
+              "cases": 50,
+              "mean_generation_seconds": 1.4151565799999999,
+              "p95_generation_seconds": 1.651312,
+              "pass_rate": 0.0,
+              "passed": 0
+            }
+          },
+          "candidate": {
+            "adapter": {
+              "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200/training/checkpoints/step-00001200",
+              "sha256": {
+                "adapter_config.json": "a50049c3579d78e5b50c80a37f0e92f86b4af0ff061b5eadfee5621fc73727bf",
+                "adapter_model.safetensors": "1c6d3a14b135a47a9f79eb81a547e0bee128777cf19ad85efde372907f2f83f5"
+              }
+            },
+            "dard": {
+              "block_size": 128,
+              "compact_queries": true,
+              "completion_policy": "legacy_force",
+              "completion_verification_steps": 2,
+              "diagnostics": "summary",
+              "max_step_records": 0,
+              "rectangular_attention": true,
+              "steps_per_block": 16,
+              "tau_c": 0.5,
+              "tau_u": 0.8,
+              "temperature": 0.0,
+              "top_p": 1.0,
+              "transfer_limit": 0
+            },
+            "decoder": "standard",
+            "forward_budget": 512,
+            "id": "standard-5a4bd2d0c4972b81-trained",
+            "model": "apple/DiffuCoder-7B-cpGRPO",
+            "prefix": "code_fence",
+            "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+            "standard_steps": 16,
+            "tokens": 512
+          },
+          "cases": 273,
+          "mean_generation_seconds": 1.3343879377289378,
+          "p95_generation_seconds": 1.647505,
+          "pass_rate": 0.040293040293040296,
+          "passed": 11
+        },
+        {
+          "by_language": {
+            "cpp": {
+              "cases": 55,
+              "mean_generation_seconds": 2.013112472727273,
+              "p95_generation_seconds": 3.692507,
+              "pass_rate": 0.4,
+              "passed": 22
+            },
+            "js": {
+              "cases": 55,
+              "mean_generation_seconds": 1.5794430909090909,
+              "p95_generation_seconds": 2.083728,
+              "pass_rate": 0.5454545454545454,
+              "passed": 30
+            },
+            "py": {
+              "cases": 113,
+              "mean_generation_seconds": 1.6675147168141593,
+              "p95_generation_seconds": 2.664115,
+              "pass_rate": 0.415929203539823,
+              "passed": 47
+            },
+            "rs": {
+              "cases": 50,
+              "mean_generation_seconds": 1.86296338,
+              "p95_generation_seconds": 2.883117,
+              "pass_rate": 0.28,
+              "passed": 14
+            }
+          },
+          "candidate": {
+            "adapter": {
+              "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200/training/checkpoints/step-00001200",
+              "sha256": {
+                "adapter_config.json": "a50049c3579d78e5b50c80a37f0e92f86b4af0ff061b5eadfee5621fc73727bf",
+                "adapter_model.safetensors": "1c6d3a14b135a47a9f79eb81a547e0bee128777cf19ad85efde372907f2f83f5"
+              }
+            },
+            "dard": {
+              "block_size": 128,
+              "compact_queries": true,
+              "completion_policy": "resample_then_verify",
+              "completion_verification_steps": 2,
+              "diagnostics": "summary",
+              "max_step_records": 0,
+              "rectangular_attention": true,
+              "steps_per_block": 64,
+              "tau_c": 0.4,
+              "tau_u": 0.75,
+              "temperature": 0.0,
+              "top_p": 1.0,
+              "transfer_limit": 8
+            },
+            "decoder": "dard",
+            "forward_budget": 512,
+            "id": "dard-84292bb36a6aa4c8-trained",
+            "model": "apple/DiffuCoder-7B-cpGRPO",
+            "prefix": "code_fence",
+            "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+            "standard_steps": 1,
+            "tokens": 512
+          },
+          "cases": 273,
+          "mean_generation_seconds": 1.7551937289377288,
+          "p95_generation_seconds": 2.854902,
+          "pass_rate": 0.4139194139194139,
+          "passed": 113
+        }
+      ],
+      "seed": 20261112
+    },
+    {
+      "rows": [
+        {
+          "by_language": {
+            "cpp": {
+              "cases": 55,
+              "mean_generation_seconds": 2.3235810363636364,
+              "p95_generation_seconds": 4.223136,
+              "pass_rate": 0.7636363636363637,
+              "passed": 42
+            },
+            "js": {
+              "cases": 55,
+              "mean_generation_seconds": 1.353682,
+              "p95_generation_seconds": 3.150506,
+              "pass_rate": 0.8,
+              "passed": 44
+            },
+            "py": {
+              "cases": 113,
+              "mean_generation_seconds": 1.2949085044247788,
+              "p95_generation_seconds": 3.233705,
+              "pass_rate": 0.6637168141592921,
+              "passed": 75
+            },
+            "rs": {
+              "cases": 50,
+              "mean_generation_seconds": 1.51971898,
+              "p95_generation_seconds": 2.91344,
+              "pass_rate": 0.74,
+              "passed": 37
+            }
+          },
+          "candidate": {
+            "adapter": null,
+            "dard": {
+              "block_size": 128,
+              "compact_queries": true,
+              "diagnostics": "summary",
+              "max_step_records": 0,
+              "rectangular_attention": true,
+              "steps_per_block": 16,
+              "tau_c": 0.5,
+              "tau_u": 0.8,
+              "temperature": 0,
+              "top_p": 1,
+              "transfer_limit": 0
+            },
+            "decoder": "ar",
+            "forward_budget": 512,
+            "id": "ar-7f348bc3385bc1e4",
+            "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+            "prefix": "code_fence",
+            "revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+            "standard_steps": 1,
+            "tokens": 512
+          },
+          "cases": 273,
+          "mean_generation_seconds": 1.5551651172161172,
+          "p95_generation_seconds": 3.540137,
+          "pass_rate": 0.7252747252747253,
+          "passed": 198
+        },
+        {
+          "by_language": {
+            "cpp": {
+              "cases": 55,
+              "mean_generation_seconds": 1.4153768545454546,
+              "p95_generation_seconds": 1.660193,
+              "pass_rate": 0.03636363636363636,
+              "passed": 2
+            },
+            "js": {
+              "cases": 55,
+              "mean_generation_seconds": 1.3489913818181818,
+              "p95_generation_seconds": 1.639539,
+              "pass_rate": 0.03636363636363636,
+              "passed": 2
+            },
+            "py": {
+              "cases": 113,
+              "mean_generation_seconds": 1.2527755132743363,
+              "p95_generation_seconds": 1.454584,
+              "pass_rate": 0.061946902654867256,
+              "passed": 7
+            },
+            "rs": {
+              "cases": 50,
+              "mean_generation_seconds": 1.42961914,
+              "p95_generation_seconds": 1.649573,
+              "pass_rate": 0.0,
+              "passed": 0
+            }
+          },
+          "candidate": {
+            "adapter": {
+              "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200/training/checkpoints/step-00001200",
+              "sha256": {
+                "adapter_config.json": "a50049c3579d78e5b50c80a37f0e92f86b4af0ff061b5eadfee5621fc73727bf",
+                "adapter_model.safetensors": "1c6d3a14b135a47a9f79eb81a547e0bee128777cf19ad85efde372907f2f83f5"
+              }
+            },
+            "dard": {
+              "block_size": 128,
+              "compact_queries": true,
+              "completion_policy": "legacy_force",
+              "completion_verification_steps": 2,
+              "diagnostics": "summary",
+              "max_step_records": 0,
+              "rectangular_attention": true,
+              "steps_per_block": 16,
+              "tau_c": 0.5,
+              "tau_u": 0.8,
+              "temperature": 0.0,
+              "top_p": 1.0,
+              "transfer_limit": 0
+            },
+            "decoder": "standard",
+            "forward_budget": 512,
+            "id": "standard-5a4bd2d0c4972b81-trained",
+            "model": "apple/DiffuCoder-7B-cpGRPO",
+            "prefix": "code_fence",
+            "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+            "standard_steps": 16,
+            "tokens": 512
+          },
+          "cases": 273,
+          "mean_generation_seconds": 1.3373071172161173,
+          "p95_generation_seconds": 1.645255,
+          "pass_rate": 0.040293040293040296,
+          "passed": 11
+        },
+        {
+          "by_language": {
+            "cpp": {
+              "cases": 55,
+              "mean_generation_seconds": 2.013997490909091,
+              "p95_generation_seconds": 3.702406,
+              "pass_rate": 0.4,
+              "passed": 22
+            },
+            "js": {
+              "cases": 55,
+              "mean_generation_seconds": 1.579535218181818,
+              "p95_generation_seconds": 2.081743,
+              "pass_rate": 0.5454545454545454,
+              "passed": 30
+            },
+            "py": {
+              "cases": 113,
+              "mean_generation_seconds": 1.665842814159292,
+              "p95_generation_seconds": 2.659727,
+              "pass_rate": 0.415929203539823,
+              "passed": 47
+            },
+            "rs": {
+              "cases": 50,
+              "mean_generation_seconds": 1.86672108,
+              "p95_generation_seconds": 2.938343,
+              "pass_rate": 0.28,
+              "passed": 14
+            }
+          },
+          "candidate": {
+            "adapter": {
+              "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200/training/checkpoints/step-00001200",
+              "sha256": {
+                "adapter_config.json": "a50049c3579d78e5b50c80a37f0e92f86b4af0ff061b5eadfee5621fc73727bf",
+                "adapter_model.safetensors": "1c6d3a14b135a47a9f79eb81a547e0bee128777cf19ad85efde372907f2f83f5"
+              }
+            },
+            "dard": {
+              "block_size": 128,
+              "compact_queries": true,
+              "completion_policy": "resample_then_verify",
+              "completion_verification_steps": 2,
+              "diagnostics": "summary",
+              "max_step_records": 0,
+              "rectangular_attention": true,
+              "steps_per_block": 64,
+              "tau_c": 0.4,
+              "tau_u": 0.75,
+              "temperature": 0.0,
+              "top_p": 1.0,
+              "transfer_limit": 8
+            },
+            "decoder": "dard",
+            "forward_budget": 512,
+            "id": "dard-84292bb36a6aa4c8-trained",
+            "model": "apple/DiffuCoder-7B-cpGRPO",
+            "prefix": "code_fence",
+            "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+            "standard_steps": 1,
+            "tokens": 512
+          },
+          "cases": 273,
+          "mean_generation_seconds": 1.7553867802197802,
+          "p95_generation_seconds": 2.811061,
+          "pass_rate": 0.4139194139194139,
+          "passed": 113
+        }
+      ],
+      "seed": 20261113
+    }
+  ],
+  "generated_unix": 1794072780.3422713,
+  "holdout": [
+    {
+      "by_language": {
+        "cpp": {
+          "cases": 55,
+          "mean_generation_seconds": 2.4078017454545453,
+          "p95_generation_seconds": 4.205422,
+          "pass_rate": 0.6909090909090909,
+          "passed": 38
+        },
+        "js": {
+          "cases": 55,
+          "mean_generation_seconds": 1.6080413272727272,
+          "p95_generation_seconds": 3.552514,
+          "pass_rate": 0.6909090909090909,
+          "passed": 38
+        },
+        "py": {
+          "cases": 113,
+          "mean_generation_seconds": 1.3732484513274337,
+          "p95_generation_seconds": 3.772372,
+          "pass_rate": 0.6106194690265486,
+          "passed": 69
+        },
+        "rs": {
+          "cases": 50,
+          "mean_generation_seconds": 1.6409785,
+          "p95_generation_seconds": 3.520774,
+          "pass_rate": 0.7,
+          "passed": 35
+        }
+      },
+      "candidate": {
+        "adapter": null,
+        "dard": {
+          "block_size": 128,
+          "compact_queries": true,
+          "diagnostics": "summary",
+          "max_step_records": 0,
+          "rectangular_attention": true,
+          "steps_per_block": 16,
+          "tau_c": 0.5,
+          "tau_u": 0.8,
+          "temperature": 0,
+          "top_p": 1,
+          "transfer_limit": 0
+        },
+        "decoder": "ar",
+        "forward_budget": 512,
+        "id": "ar-7f348bc3385bc1e4",
+        "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+        "prefix": "code_fence",
+        "revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+        "standard_steps": 1,
+        "tokens": 512
+      },
+      "cases": 273,
+      "mean_generation_seconds": 1.6780123406593406,
+      "p95_generation_seconds": 3.696649,
+      "pass_rate": 0.6593406593406593,
+      "passed": 180
+    },
+    {
+      "by_language": {
+        "cpp": {
+          "cases": 55,
+          "mean_generation_seconds": 1.4687548363636362,
+          "p95_generation_seconds": 1.809899,
+          "pass_rate": 0.03636363636363636,
+          "passed": 2
+        },
+        "js": {
+          "cases": 55,
+          "mean_generation_seconds": 1.422474509090909,
+          "p95_generation_seconds": 1.803432,
+          "pass_rate": 0.03636363636363636,
+          "passed": 2
+        },
+        "py": {
+          "cases": 113,
+          "mean_generation_seconds": 1.285908778761062,
+          "p95_generation_seconds": 1.728596,
+          "pass_rate": 0.04424778761061947,
+          "passed": 5
+        },
+        "rs": {
+          "cases": 50,
+          "mean_generation_seconds": 1.45326558,
+          "p95_generation_seconds": 1.850962,
+          "pass_rate": 0.02,
+          "passed": 1
+        }
+      },
+      "candidate": {
+        "adapter": {
+          "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200/training/checkpoints/step-00001200",
+          "sha256": {
+            "adapter_config.json": "a50049c3579d78e5b50c80a37f0e92f86b4af0ff061b5eadfee5621fc73727bf",
+            "adapter_model.safetensors": "1c6d3a14b135a47a9f79eb81a547e0bee128777cf19ad85efde372907f2f83f5"
+          }
+        },
+        "dard": {
+          "block_size": 128,
+          "compact_queries": true,
+          "completion_policy": "legacy_force",
+          "completion_verification_steps": 2,
+          "diagnostics": "summary",
+          "max_step_records": 0,
+          "rectangular_attention": true,
+          "steps_per_block": 16,
+          "tau_c": 0.5,
+          "tau_u": 0.8,
+          "temperature": 0.0,
+          "top_p": 1.0,
+          "transfer_limit": 0
+        },
+        "decoder": "standard",
+        "forward_budget": 512,
+        "id": "standard-5a4bd2d0c4972b81-trained",
+        "model": "apple/DiffuCoder-7B-cpGRPO",
+        "prefix": "code_fence",
+        "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+        "standard_steps": 16,
+        "tokens": 512
+      },
+      "cases": 273,
+      "mean_generation_seconds": 1.3809105677655678,
+      "p95_generation_seconds": 1.754138,
+      "pass_rate": 0.03663003663003663,
+      "passed": 10
+    },
+    {
+      "by_language": {
+        "cpp": {
+          "cases": 55,
+          "mean_generation_seconds": 1.8306290363636364,
+          "p95_generation_seconds": 2.836533,
+          "pass_rate": 0.36363636363636365,
+          "passed": 20
+        },
+        "js": {
+          "cases": 55,
+          "mean_generation_seconds": 1.620060181818182,
+          "p95_generation_seconds": 2.257439,
+          "pass_rate": 0.43636363636363634,
+          "passed": 24
+        },
+        "py": {
+          "cases": 113,
+          "mean_generation_seconds": 1.7279071946902655,
+          "p95_generation_seconds": 2.410777,
+          "pass_rate": 0.3893805309734513,
+          "passed": 44
+        },
+        "rs": {
+          "cases": 50,
+          "mean_generation_seconds": 1.82122698,
+          "p95_generation_seconds": 3.220643,
+          "pass_rate": 0.16,
+          "passed": 8
+        }
+      },
+      "candidate": {
+        "adapter": {
+          "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200/training/checkpoints/step-00001200",
+          "sha256": {
+            "adapter_config.json": "a50049c3579d78e5b50c80a37f0e92f86b4af0ff061b5eadfee5621fc73727bf",
+            "adapter_model.safetensors": "1c6d3a14b135a47a9f79eb81a547e0bee128777cf19ad85efde372907f2f83f5"
+          }
+        },
+        "dard": {
+          "block_size": 128,
+          "compact_queries": true,
+          "completion_policy": "resample_then_verify",
+          "completion_verification_steps": 2,
+          "diagnostics": "summary",
+          "max_step_records": 0,
+          "rectangular_attention": true,
+          "steps_per_block": 64,
+          "tau_c": 0.4,
+          "tau_u": 0.75,
+          "temperature": 0.0,
+          "top_p": 1.0,
+          "transfer_limit": 8
+        },
+        "decoder": "dard",
+        "forward_budget": 512,
+        "id": "dard-84292bb36a6aa4c8-trained",
+        "model": "apple/DiffuCoder-7B-cpGRPO",
+        "prefix": "code_fence",
+        "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+        "standard_steps": 1,
+        "tokens": 512
+      },
+      "cases": 273,
+      "mean_generation_seconds": 1.7439661868131868,
+      "p95_generation_seconds": 2.589458,
+      "pass_rate": 0.3516483516483517,
+      "passed": 96
+    }
+  ],
+  "holdout_used_for_selection": false,
+  "native": {
+    "adapter": {
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200/training/checkpoints/step-00001200",
+      "sha256": {
+        "adapter_config.json": "a50049c3579d78e5b50c80a37f0e92f86b4af0ff061b5eadfee5621fc73727bf",
+        "adapter_model.safetensors": "1c6d3a14b135a47a9f79eb81a547e0bee128777cf19ad85efde372907f2f83f5"
+      }
+    },
+    "dard": {
+      "block_size": 128,
+      "compact_queries": true,
+      "completion_policy": "legacy_force",
+      "completion_verification_steps": 2,
+      "diagnostics": "summary",
+      "max_step_records": 0,
+      "rectangular_attention": true,
+      "steps_per_block": 16,
+      "tau_c": 0.5,
+      "tau_u": 0.8,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "transfer_limit": 0
+    },
+    "decoder": "standard",
+    "forward_budget": 512,
+    "id": "standard-5a4bd2d0c4972b81-trained",
+    "model": "apple/DiffuCoder-7B-cpGRPO",
+    "prefix": "code_fence",
+    "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+    "standard_steps": 16,
+    "tokens": 512
+  },
+  "selected": {
+    "adapter": {
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200/training/checkpoints/step-00001200",
+      "sha256": {
+        "adapter_config.json": "a50049c3579d78e5b50c80a37f0e92f86b4af0ff061b5eadfee5621fc73727bf",
+        "adapter_model.safetensors": "1c6d3a14b135a47a9f79eb81a547e0bee128777cf19ad85efde372907f2f83f5"
+      }
+    },
+    "dard": {
+      "block_size": 128,
+      "compact_queries": true,
+      "completion_policy": "resample_then_verify",
+      "completion_verification_steps": 2,
+      "diagnostics": "summary",
+      "max_step_records": 0,
+      "rectangular_attention": true,
+      "steps_per_block": 64,
+      "tau_c": 0.4,
+      "tau_u": 0.75,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "transfer_limit": 8
+    },
+    "decoder": "dard",
+    "forward_budget": 512,
+    "id": "dard-84292bb36a6aa4c8-trained",
+    "model": "apple/DiffuCoder-7B-cpGRPO",
+    "prefix": "code_fence",
+    "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+    "standard_steps": 1,
+    "tokens": 512
+  },
+  "status": "completed",
+  "validation": [
+    {
+      "by_language": {
+        "cpp": {
+          "cases": 55,
+          "mean_generation_seconds": 2.290038272727273,
+          "p95_generation_seconds": 4.148236,
+          "pass_rate": 0.7636363636363637,
+          "passed": 42
+        },
+        "js": {
+          "cases": 55,
+          "mean_generation_seconds": 1.3304452,
+          "p95_generation_seconds": 3.14137,
+          "pass_rate": 0.8,
+          "passed": 44
+        },
+        "py": {
+          "cases": 113,
+          "mean_generation_seconds": 1.283443221238938,
+          "p95_generation_seconds": 3.216624,
+          "pass_rate": 0.6637168141592921,
+          "passed": 75
+        },
+        "rs": {
+          "cases": 50,
+          "mean_generation_seconds": 1.5171299,
+          "p95_generation_seconds": 2.95336,
+          "pass_rate": 0.74,
+          "passed": 37
+        }
+      },
+      "candidate": {
+        "adapter": null,
+        "dard": {
+          "block_size": 128,
+          "compact_queries": true,
+          "diagnostics": "summary",
+          "max_step_records": 0,
+          "rectangular_attention": true,
+          "steps_per_block": 16,
+          "tau_c": 0.5,
+          "tau_u": 0.8,
+          "temperature": 0,
+          "top_p": 1,
+          "transfer_limit": 0
+        },
+        "decoder": "ar",
+        "forward_budget": 512,
+        "id": "ar-7f348bc3385bc1e4",
+        "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+        "prefix": "code_fence",
+        "revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+        "standard_steps": 1,
+        "tokens": 512
+      },
+      "cases": 273,
+      "mean_generation_seconds": 1.5385061172161172,
+      "p95_generation_seconds": 3.477754,
+      "pass_rate": 0.7252747252747253,
+      "passed": 198
+    },
+    {
+      "by_language": {
+        "cpp": {
+          "cases": 55,
+          "mean_generation_seconds": 1.4715405454545454,
+          "p95_generation_seconds": 1.933977,
+          "pass_rate": 0.03636363636363636,
+          "passed": 2
+        },
+        "js": {
+          "cases": 55,
+          "mean_generation_seconds": 1.3934534545454544,
+          "p95_generation_seconds": 1.619141,
+          "pass_rate": 0.03636363636363636,
+          "passed": 2
+        },
+        "py": {
+          "cases": 113,
+          "mean_generation_seconds": 1.2639387522123895,
+          "p95_generation_seconds": 1.553317,
+          "pass_rate": 0.061946902654867256,
+          "passed": 7
+        },
+        "rs": {
+          "cases": 50,
+          "mean_generation_seconds": 1.43015654,
+          "p95_generation_seconds": 1.700325,
+          "pass_rate": 0.0,
+          "passed": 0
+        }
+      },
+      "candidate": {
+        "adapter": {
+          "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200/training/checkpoints/step-00001200",
+          "sha256": {
+            "adapter_config.json": "a50049c3579d78e5b50c80a37f0e92f86b4af0ff061b5eadfee5621fc73727bf",
+            "adapter_model.safetensors": "1c6d3a14b135a47a9f79eb81a547e0bee128777cf19ad85efde372907f2f83f5"
+          }
+        },
+        "dard": {
+          "block_size": 128,
+          "compact_queries": true,
+          "completion_policy": "legacy_force",
+          "completion_verification_steps": 2,
+          "diagnostics": "summary",
+          "max_step_records": 0,
+          "rectangular_attention": true,
+          "steps_per_block": 16,
+          "tau_c": 0.5,
+          "tau_u": 0.8,
+          "temperature": 0.0,
+          "top_p": 1.0,
+          "transfer_limit": 0
+        },
+        "decoder": "standard",
+        "forward_budget": 512,
+        "id": "standard-5a4bd2d0c4972b81-trained",
+        "model": "apple/DiffuCoder-7B-cpGRPO",
+        "prefix": "code_fence",
+        "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+        "standard_steps": 16,
+        "tokens": 512
+      },
+      "cases": 273,
+      "mean_generation_seconds": 1.3622988131868132,
+      "p95_generation_seconds": 1.622403,
+      "pass_rate": 0.040293040293040296,
+      "passed": 11
+    },
+    {
+      "by_language": {
+        "cpp": {
+          "cases": 55,
+          "mean_generation_seconds": 1.9371865636363637,
+          "p95_generation_seconds": 3.325575,
+          "pass_rate": 0.4,
+          "passed": 22
+        },
+        "js": {
+          "cases": 55,
+          "mean_generation_seconds": 1.5422315090909091,
+          "p95_generation_seconds": 2.109721,
+          "pass_rate": 0.5454545454545454,
+          "passed": 30
+        },
+        "py": {
+          "cases": 113,
+          "mean_generation_seconds": 1.6306024867256637,
+          "p95_generation_seconds": 2.509856,
+          "pass_rate": 0.415929203539823,
+          "passed": 47
+        },
+        "rs": {
+          "cases": 50,
+          "mean_generation_seconds": 1.82041834,
+          "p95_generation_seconds": 2.820538,
+          "pass_rate": 0.28,
+          "passed": 14
+        }
+      },
+      "candidate": {
+        "adapter": {
+          "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200/training/checkpoints/step-00001200",
+          "sha256": {
+            "adapter_config.json": "a50049c3579d78e5b50c80a37f0e92f86b4af0ff061b5eadfee5621fc73727bf",
+            "adapter_model.safetensors": "1c6d3a14b135a47a9f79eb81a547e0bee128777cf19ad85efde372907f2f83f5"
+          }
+        },
+        "dard": {
+          "block_size": 128,
+          "compact_queries": true,
+          "completion_policy": "resample_then_verify",
+          "completion_verification_steps": 2,
+          "diagnostics": "summary",
+          "max_step_records": 0,
+          "rectangular_attention": true,
+          "steps_per_block": 64,
+          "tau_c": 0.4,
+          "tau_u": 0.75,
+          "temperature": 0.0,
+          "top_p": 1.0,
+          "transfer_limit": 8
+        },
+        "decoder": "dard",
+        "forward_budget": 512,
+        "id": "dard-84292bb36a6aa4c8-trained",
+        "model": "apple/DiffuCoder-7B-cpGRPO",
+        "prefix": "code_fence",
+        "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+        "standard_steps": 1,
+        "tokens": 512
+      },
+      "cases": 273,
+      "mean_generation_seconds": 1.7093296410256411,
+      "p95_generation_seconds": 2.674202,
+      "pass_rate": 0.4139194139194139,
+      "passed": 113
+    }
+  ]
+}

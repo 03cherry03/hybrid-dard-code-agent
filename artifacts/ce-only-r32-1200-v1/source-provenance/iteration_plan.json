@@ -1,0 +1,5521 @@
+{
+  "campaign": "dard_matched_tradeoff_v1",
+  "data": "/data/hybrid-dard/results/code-generation-tradeoff-20261107/data-v2",
+  "data_root": "/data/hybrid-dard",
+  "data_sha256": {
+    "data_accounting.json": "4c1257775145120983b0d79ddef1fe572797233aad77a81c3ae0b232c836fad6",
+    "holdout_tasks.jsonl": "56f5b21b0a04f5894c58a5cd66b8d82b80968ea3c68f9cc046f74b0113b544b4",
+    "smoke_tasks.jsonl": "b314a3955888382c8fa244acb84d43b7b3a378c26854281c543a615162cb9d08",
+    "split_manifest.json": "3b8e99e74e9d43532e12d7319a930772d8b95188099bb2ecd1d2fc57532e3e86",
+    "train_tasks.jsonl": "821bdbed03aa9fdef46d6c0cfba58a2bd96005653cf7d0ac801b9fa915699c57",
+    "validation_tasks.jsonl": "f97432bb495d3670e4fddfaa3a132a3badb9f714e1e916421e0dac63ef8843ca"
+  },
+  "deadline_unix": 1794038400,
+  "evaluation_options": {
+    "candidate_warmup": true,
+    "counterbalanced_order": true,
+    "extraction_version": "v2",
+    "save_grading_verdict": true
+  },
+  "failure_limit": 3,
+  "finalist_rule": "Per weights: contexts of standard and DARD quality maxima, both decoders quality maximum and fastest within 3 points; maximum 18 including two AR references.",
+  "generation_timeout": 120,
+  "gpus": [
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "uuid": "GPU-2463d059-5948-5dad-17d7-8098e0179c9a"
+    },
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "uuid": "GPU-e068cda8-11a9-00e8-e57c-0cfdd9a72293"
+    },
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "uuid": "GPU-6d5a15a5-63bc-25aa-4ed8-3d83ba6efb30"
+    },
+    {
+      "name": "NVIDIA GeForce RTX 4090",
+      "uuid": "GPU-30ff78d3-a3ea-ba5d-8d4d-4411a4538c89"
+    }
+  ],
+  "grading_policy": "Decoder-blind extraction v2 and identical functional tests. Incomplete/verification flags are separate diagnostics and never override functional verdicts.",
+  "grading_timeout": 300,
+  "holdout_policy": "Previously exposed holdout is descriptive replication only. Freeze selection first; do not tune or select from its results.",
+  "initial_candidates": [
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-75731e9c1a6bdc5a",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 32,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-384600361ae2bc6b",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 64,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 128,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-a208c45ad0faf0ee",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 128,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 256,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-592784d6a72e06c7",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 256,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-10ecb5b1d5e4197f",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-ff337c9446754111",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-5c8ab7601d2b6d7a",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-7c43421f75ce66cb",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-4d09bf4b5b0d586f",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-34193bd666b8a6d1",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "verified_only",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-beda320bee82b726",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-ee794c6c02a4a28e",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 32,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-28bcf3b1f2fcb580",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 64,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 128,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-eb7479b7bd611cdf",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 128,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 256,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-04cf033dbd747039",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 256,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-5797176a7abdefd6",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-88ed0bc254582711",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-b655a557c3fa2a42",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-c2a4dea8392ae54d",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-cf7438ca5b9abfbe",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-351538711f6e233a",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "verified_only",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-21101c255d91d700",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-1c69a3550d6544ca",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 32,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-fd280e2315318965",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 64,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 128,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-84f84423142b5e59",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 128,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 256,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-ce6555f58d514f4f",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 256,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-f141da38511dc6eb",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-9296f8477e4ab1c4",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-a48ec908c76462fb",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-e9dbeeb738021f60",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-75f0642562a72ca4",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-6294b4f838d0e503",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "verified_only",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-cd5110473f17bd26",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.4,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-5b49f7b69b25b936",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 32,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.4,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-7f0ae99afcc8f132",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 64,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 128,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.4,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-699bef8486203898",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 128,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 256,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.4,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-626fb67f0064c2d8",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 256,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.4,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-7e803e6e9824219d",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.4,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-356ed6e0269b7569",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.4,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-8d2a210d7c2f4207",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.4,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-37cb5d0c2acc7d72",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.4,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-c23645f7f2844011",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.4,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-16801aa5e1d2623b",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "verified_only",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.4,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-e7bfcbd96d4d50e4",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-29fd427652e112b6",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 32,
+      "tokens": 512
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-26ccfefdb4e27e0b",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 64,
+      "tokens": 512
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 128,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-0edb946082fc92f8",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 128,
+      "tokens": 512
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 256,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-3b69638dc3148fdf",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 256,
+      "tokens": 512
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-210e7b8e3de8011b",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-117b475381206dcc",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-9735dcc9824d8c5f",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-d7c49c13cffa8d6d",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-d6acb26f9e9db3d2",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-077b0502fe0d818d",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "verified_only",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-4f7a57b244ca2e93",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-5095c454f31b03fe",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 32,
+      "tokens": 512
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-746f5de96ac9e696",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 64,
+      "tokens": 512
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 128,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-7c8fec27d179b335",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 128,
+      "tokens": 512
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 256,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-9b2335b6619e3af5",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 256,
+      "tokens": 512
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-5a0093571871ef28",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-fccfe917e98dcc5b",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-50a846ce5935f612",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-b209c4c0075460dd",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-3d0bc152d6305f0d",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-11d5457f5c33fc97",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "verified_only",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-b058f30afc963d38",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.4,
+        "tau_u": 0.6,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-4edae96a8f4d9f48",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.4,
+        "tau_u": 0.6,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-3282ede807638dd1",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.4,
+        "tau_u": 0.7,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-38da417b2d64125f",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.4,
+        "tau_u": 0.7,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-6ba55449ec9b787c",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.4,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-86176e94315008fd",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.4,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-3f7edd8caf8c9c05",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.6,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-2302df056736e909",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.6,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-005a726bdbbf9e2e",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.7,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-94b3304726f9a247",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.7,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-bf17617f22fec533",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.6,
+        "tau_u": 0.6,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-642136aebcf87157",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.6,
+        "tau_u": 0.6,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-63a351ff6cb9e04b",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.6,
+        "tau_u": 0.7,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-7cb0e908bd68dde7",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.6,
+        "tau_u": 0.7,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-87f2bab121bad0fe",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.6,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-9640d0481e2a1db0",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.6,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-ef8fbd3e0d54fac1",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 64,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-fe30f25d14b7d92c",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 64,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-7100ae353e115d35",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 256,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-c0f53d0f016a80f7",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 256,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-455745453fbc184a",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 128,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-8555cbaff5d065d8",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 128,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-d51bb3c17e560092",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-1e01fc165ed85973",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 32,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-a421abed9ec423b1",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 64,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 128,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-e7e76dae6cae7819",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 128,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 256,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-bc7fe712a0d64337",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 256,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-af4253bc27477914",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-fdc34f1abf269126",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-fa86181acf4f04d1",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-81281d167f50ac1f",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-e7d808c905454d41",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-0470aa5b6168b46e",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "verified_only",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-a60dbfd6edd1cf76",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-a66124541f95c27a",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 32,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-f84de927e3efc70d",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 64,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 128,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-995454196bc4ae62",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 128,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 256,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-195c4e03bfe5cd94",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 256,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-06eae04d693e4828",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-fa79951f174a59a3",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-b51251ab31ea3550",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-8a51d0e7449a2834",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-a3c543fbf101f07d",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-771fefb2669bdde8",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "verified_only",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-0c231895f5af2643",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-befafccf8ff3cf9d",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 32,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-4d47fdb9710e5069",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 64,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 128,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-18db724033fc7344",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 128,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 256,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-d4168f11922f3848",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 256,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-48476bfbfaba54bb",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-8afe6f8f6a97d206",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-67b04f622665d224",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-0071f5819d2d6ad9",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-8e99b386ff3995a1",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-5c56e2441034ae33",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "verified_only",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-861b38c1d3bd4649",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.4,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-017abd0589a52e23",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 32,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.4,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-0253af8dcabe024c",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 64,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 128,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.4,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-3ef07f577244e355",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 128,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 256,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.4,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-af4e51f49a36853e",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 256,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.4,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-6da51f0c6586df14",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.4,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-57709427b4de6180",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.4,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-30ae0f7a4c6171b2",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.4,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-14e0f4bd90a0f471",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.4,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-0344afdf1c6011eb",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.4,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-5a85f680c0ce5327",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "verified_only",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.4,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-d10cbca5c138f622",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-6d544589ac585ae9",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 32,
+      "tokens": 512
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-bbb83e6eb88e5eb9",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 64,
+      "tokens": 512
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 128,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-f5a486f9ddffc401",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 128,
+      "tokens": 512
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 256,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-689913d0773182d5",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 256,
+      "tokens": 512
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-4589f0cc395e2405",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-6dbfc0d56dbb7153",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-60fabc813ee55817",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-66ca9c99dcc141de",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-d1f236437b30beaf",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-fd92fa36bbeffd18",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "verified_only",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-f73e99a75535ca67",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-5a30d723a03d8e55",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 32,
+      "tokens": 512
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-a79cab10e8a3c330",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 64,
+      "tokens": 512
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 128,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-fcfa0b3d6ca882c4",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 128,
+      "tokens": 512
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 256,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-327a4a420dd3b679",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 256,
+      "tokens": 512
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-ea95ffcbcd0c85e9",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-3609ec39c7b80875",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-1b3de26b5b62ccbe",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-cce8a76f3c053d4f",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-e01b8ec9e488da51",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-c21d38b353eb5907",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "verified_only",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.3,
+        "top_p": 0.95,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-e15db1f76ee2a463",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "code_fence",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 512
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.4,
+        "tau_u": 0.6,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-faf189fe8e54d964",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.4,
+        "tau_u": 0.6,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-123568fd64690cd6",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.4,
+        "tau_u": 0.7,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-9e1917acd5522823",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.4,
+        "tau_u": 0.7,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-341d3baa97bbc9c6",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.4,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-b0e1c2919859603d",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.4,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-ac6df3a80df2c19f",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.6,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-0af4847c1a5e7306",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.6,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-a8d88aef4b8dfd7e",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.7,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-6823d99079ad3151",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.7,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-8cd4f758e516e9df",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.6,
+        "tau_u": 0.6,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-c81236e47ba78137",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.6,
+        "tau_u": 0.6,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-4c0dfb763496fbef",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.6,
+        "tau_u": 0.7,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-8b6441ff1e2d6e6a",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.6,
+        "tau_u": 0.7,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-5e77b05bbfcce5ca",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.6,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-ef3139301315611a",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.6,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-805494b96db3928f",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 64,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-488fc1ca6c657844",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 64,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-0b442880b3cf08f0",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 256,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-800c2fe7e5856253",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 256,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-e927436c0de0c513",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 128,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-89c7713f28a9eac9",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 128,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-9752e7cc13fef777",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0,
+        "top_p": 1,
+        "transfer_limit": 0
+      },
+      "decoder": "ar",
+      "forward_budget": 512,
+      "id": "ar-745a9a1477e464c2",
+      "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "prefix": "code_fence",
+      "revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0,
+        "top_p": 1,
+        "transfer_limit": 0
+      },
+      "decoder": "ar",
+      "forward_budget": 512,
+      "id": "ar-7f348bc3385bc1e4",
+      "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "prefix": "code_fence",
+      "revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+      "standard_steps": 1,
+      "tokens": 512
+    }
+  ],
+  "limitations": [
+    "Dream adaptation is not an exact LLaDA reference reproduction.",
+    "Validation and holdout were previously inspected; no fresh unseen generalization claim.",
+    "Shortlist confidence intervals are post-selection, without multiplicity correction.",
+    "Native and DARD forward passes have different cost; wall-clock comparisons are primary."
+  ],
+  "model_receipts": [
+    {
+      "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/audit/cpgrpo/candidate_model_receipt.json",
+      "sha256": "fe841c898df5c7b1b1ac5e46f65829e1d65cf490675820caab33020edbc1c6c4"
+    },
+    {
+      "path": "/data/hybrid-dard/results/code-generation-dard-core-20261105/audit/model_integrity.json",
+      "sha256": "57e1d3f546bd48a806eb887fea7cbcaa6f934ba4c08b3076e9d2359a46c9508c"
+    }
+  ],
+  "output": "/data/hybrid-dard/results/code-generation-tradeoff-20261107",
+  "package_versions": {
+    "accelerate": "1.6.0",
+    "huggingface-hub": "0.31.2",
+    "peft": "0.15.2",
+    "safetensors": "0.5.3",
+    "torch": "2.7.1+cu118",
+    "transformers": "4.51.3"
+  },
+  "paper": "https://arxiv.org/html/2608.26574v1",
+  "previous_plan": {
+    "path": "/data/hybrid-dard/results/code-generation-tradeoff-20261107/iteration_plan_v1.json",
+    "sha256": "e0887355de63c449a3ff0a8e3b47962071b6986ec3fc4891a58b84e1384e4d55"
+  },
+  "python": "/data/hybrid-dard/envs/iterative-training/bin/python",
+  "repeat_seeds": [
+    20261106,
+    20261107
+  ],
+  "revision_reason": "Correct smoke stratification: ensure each GPU gets one task in each of four languages.",
+  "schema_version": 2,
+  "seed": 20261105,
+  "selection": "All validation cases, then frozen shortlist and two additional seeds. Source-cluster uncertainty, Pareto frontier and latency-budget operating points. No global-optimum claim.",
+  "smoke_candidates": [
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 16,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0,
+        "top_p": 1,
+        "transfer_limit": 0
+      },
+      "decoder": "ar",
+      "forward_budget": 512,
+      "id": "ar-745a9a1477e464c2",
+      "model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "prefix": "code_fence",
+      "revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 32,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "standard",
+      "forward_budget": 512,
+      "id": "standard-75731e9c1a6bdc5a",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 32,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "legacy_force",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-4d09bf4b5b0d586f",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-34193bd666b8a6d1",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": null,
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "verified_only",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.5,
+        "tau_u": 0.8,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-beda320bee82b726",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    },
+    {
+      "adapter": {
+        "path": "/data/hybrid-dard/results/code-generation-iterative-20261107/round-01/training/checkpoints/step-00000100",
+        "sha256": {
+          "adapter_config.json": "6f16ce36b8105dba873d8bf124c82424c04d09f909f356b451c6a4969c02c598",
+          "adapter_model.safetensors": "17ef9b33dc4c6414357fccb4679dc529dcf0dec1fc2a0e5cd990240d17c4fed1"
+        }
+      },
+      "dard": {
+        "block_size": 128,
+        "compact_queries": true,
+        "completion_policy": "force_then_verify",
+        "completion_verification_steps": 2,
+        "diagnostics": "summary",
+        "max_step_records": 0,
+        "rectangular_attention": true,
+        "steps_per_block": 64,
+        "tau_c": 0.6,
+        "tau_u": 0.6,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "transfer_limit": 0
+      },
+      "decoder": "dard",
+      "forward_budget": 512,
+      "id": "dard-4c0dfb763496fbef",
+      "model": "apple/DiffuCoder-7B-cpGRPO",
+      "prefix": "none",
+      "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204",
+      "standard_steps": 1,
+      "tokens": 256
+    }
+  ],
+  "source": "/data/hybrid-dard/results/code-generation-tradeoff-20261107/source-v2",
+  "source_sha256": {
+    "campaign_reporting.py": "cb9a255c354a675817be86a2620cc4090abe4285698bd5fcac1104f888adef06",
+    "dard_attention.py": "219fba4af30cea0a460e309d81c7ea772d658fb6fd8a0250ce44022a375e68fb",
+    "dard_decoder.py": "63a20195173aaf6b8b41accd94664e6bcd9b03aef7847e518e4f51e4b127a06b",
+    "dard_model_adapter.py": "c6b7db007db9e8f3f14da1dfe62e42edb6f06a992ecbb0b3993ed277c0f741f8",
+    "datasets_code.py": "c557be00ef63c8520574157f06c24f726a0242a55fabec7457e0b3c46b47a6e9",
+    "diffusion_training.py": "f7f95aeb74fee06d985e460c02110132ab06a8fe330980d181f8c7072b3dd4bc",
+    "environment_probe.py": "20f92ed589ed28d44cd4046168bc6330a5a40394a66f3c4c01e43be4d6e5785b",
+    "evaluation.py": "20be33ced42662f7bd278627acd12b46bdb7d79e231279af5f51161f9c458abb",
+    "experiment_analysis.py": "80105d4682f3938181a2de7591d141b19575724cad1e19a7b1c3cca137ce358b",
+    "experiment_journal.py": "38544e1e18f26adb979a899a4f3da78abdcfd49d552e1060e1a61daee30fdb21",
+    "experiment_notifications.py": "a23ae583c82517c9c60bc562ff1a8a1a317a5aea030835c3a042bb37979ff3c9",
+    "experiment_shards.py": "8aa937d073f7a5507a79f2db467bdc9c3c3100c88dd4635a162cc5898c35d358",
+    "function_benchmarks.py": "effa09a390096bcb2cf6d205a2a19c31597460b52f02d4b8dc93e48bbd09da57",
+    "grading_audit.py": "99f28e1c0cca81afabc37e164c44dee434c00af6bfb6039d271f46662864b9f1",
+    "iteration_observability.py": "f519df284f0935139b1baaedbaa7129aaf8e386b1cb3568ac548e402386b34b6",
+    "iterative_data.py": "5b4b1bc9d490f6b4c8e407dcd2f4ea6a1db6bfeb5209816c4be60076e97d9721",
+    "iterative_tuning.py": "291c50f1754c28e1d2e959643b30ec18644e2cff6c5de189840a6a858b6fce58",
+    "local_execution.py": "16ca79b2812e2ef7267bf9ce484bc0d3ba8c023c928f1a12bc4baf89239fa9a3",
+    "local_repository_preparation.py": "d53b8676bded45df7b913717a6b0a78a102dbdb4d712783ededd9d4a14c12852",
+    "local_swe_worker.py": "4e3c834f3c56c3eaabdbf2f4621cd244804f4addfc25690734ec63f9e5982430",
+    "main.py": "aced3b6ab4623480d84564724c6956fc7ab2ecc3afb05d6899cc7aebd04c6d0e",
+    "models.py": "deaf9744ded7c1960b0e0ccb1eb8c2644a6a6df4a7166b67d29b68d0e8bc5521",
+    "native_repository_recipes.json": "d336b2de9113c612b299694ef25140377efcd49d8bd1663ad9a7406e0ab581d5",
+    "native_toolchains.py": "3f73fe07eb001d7b075c9ca3461a4b5d35ea6ef070649ae60f82bf056b493260",
+    "official_function_worker.py": "0e26788b0a008720e5ea326d20e0e4acc31edc797851aef99f0817b8589bdcdc",
+    "prepare_data.py": "d085c652fd15a87c75d634cbc94b7795fcc21f9c70835a3aec65d431e45cbf2b",
+    "reporting.py": "6cf2a4e2ea34ca6d591eb99b3274d1987b9ce82159c971ac16772ec72f44ef73",
+    "repository_agent.py": "e415835c75cfecd91df040f300cee13ab1075dd02ce14cbb11569764d0e64b01",
+    "repository_runner.py": "12ba77492a0bf8091be769bedb7c983f13d9e9f11892ac55fd595c6ebb30da69",
+    "requirements.bigcodebench-tasks.txt": "8e8f7cd3c3ec777c49e8c67a5aa0f76001b2d3214c2224ddc77b279de96c272a",
+    "requirements.bigcodebench.txt": "5ee1f11694d970c1d679e53d4d6780af4d7a8d221f75ae01c992afaba8561d48",
+    "requirements.evalplus.txt": "24f3b7b21ac73d3f6ae58498edb1468768fe0a5de239974f8f3bf18bf88847ad",
+    "requirements.inference.txt": "ae337b4fd854db4808b8f1bba142aa4b4ed8549bb6520edd5a1288ec9460626d",
+    "requirements.iterative.txt": "c512691359c4421176c52de8d0f54d349c71950fdeb59bc639c9d08a82dab6d6",
+    "requirements.swebench.txt": "70a64d9e535b5a23922dae581a4eb4ee896c9e60403f1f4c0d6db4a43fc329dd",
+    "requirements.txt": "fbd30a2b7e5a7451b9771ebceb39473b22e5828a58086de7bf4356c9bffa33fa",
+    "run_server.sh": "63d35b9f986e3967d7fe24be7b63e11e4fad57ed70225af983ae6f274f736aad",
+    "scripts/all_experiments.py": "6a06bd306594e2ddcc145c35cd68fc84cd12e0e4d508c0b2859afa38cba47ca9",
+    "scripts/campaign_guard.py": "0efeacb7f658f3209891e9084fe6a48580b5d21dce68930c0bef14f682fd6251",
+    "scripts/deadline_budget.py": "8c53e74be6127c6a2c2ce1ec28cc07c9a55d783d64adf24b92fe6c1fefa13ef2",
+    "scripts/download_models.py": "90275ab89f4e115d8c7e65e5bb68681af7c0a6e8a5e4a338cc149c6a6fb6964e",
+    "scripts/download_one_model.py": "990ed81d3ea173f70f9089dc451f5eb0ac6e67f959c927d96537a43e655a333f",
+    "scripts/experiment_pipeline.py": "f33b7cb31bd125ac7845cf4e2b99671cca9830f4fb5b3ebd11bb5b796e6c6fd0",
+    "scripts/focused_experiments.py": "d3e22bfd9333c2d81914897d202f5ca97b95592ad75c102ee78896592be40ba2",
+    "scripts/focused_selection.py": "a31f7533787d508f289bf2d039af644002e68ede27df946027aedb3642b055d0",
+    "scripts/four_gpu.py": "1b11909a891fb79adcac6c42c9df4098b8cfe5b327878ca362bab875ba120be1",
+    "scripts/iterative_eval_worker.py": "b9e8bf721c214b5b7f8b6225973a35b82a5fe3e0487f28bd767cda479def95d5",
+    "scripts/iterative_experiments.py": "06a103dde5a9eb6a1a696c36cfc1a7f46f18fc58d4de15e3f526eca52b0d0eeb",
+    "scripts/iterative_teacher.py": "d02ff54a05339c0fda01be0da2f15b32c85b327d5d11e8ea41d6e9b7d6bffb65",
+    "scripts/monitor_iterative_run.py": "b777d6082a7420856d4ef36fad8dc4036f5f4987c5f2734767b9d3229ec4067d",
+    "scripts/optimize_experiments.py": "d1b4d932fffd6c2e55019fe452b46f3b78186d77ccc4601e7501742e5366ccfd",
+    "scripts/prepare_candidate_model.py": "bfb4f5db37ea5eb4f87c96a4290955572412522e353af65d3ff844355628cda9",
+    "scripts/prepare_iterative_data.py": "76446eb715ff90bc10c77d95a578f3a18f9e8987c34da9f44fa40028240c7cfb",
+    "scripts/prepare_repositories.py": "cec7680f732431f0086f8e5907c70bd156ce7827f066c26b8461cdcc1daf0947",
+    "scripts/priority_experiments.py": "3a5de3fcc62b5da7627bd33d4a1d0bf71b2e6cc36952b6eb6c8686ace1953de7",
+    "scripts/resume_reviewed_experiments.py": "77b144f7d657f7d6377d3aed3d78d3fc18932ed0eab85e846650afdd486a0df4",
+    "scripts/run_all_experiments.sh": "275479a73c0e46bce0d09657b9e3fa02a08a5eccf828b2deac40432b67fd021c",
+    "scripts/run_four_gpu.sh": "dc953cd032665b1a50c8e8b8a642cea18e92725a625199e18384d2c010e12885",
+    "scripts/run_functions.sh": "deb7c6de514f3b609cf3c30307810721866bec1110795e71909018a8c2038446",
+    "scripts/runtime_env.sh": "0b91c4ae2926eabe4fe719b5be3e9feb8cb4b20fe9dfd3232641fc862fed854c",
+    "scripts/setup_env.sh": "a184e74a3aab810db2c64a41d9b91a4f5622c85e2d447326760131cee6f1d095",
+    "scripts/setup_system_dependencies.sh": "4067a8eb97cc90cabe822011ea889a78ed157039085e53b05dc23f9d01d27853",
+    "scripts/system_dependencies.py": "753947322ad400b957dd732be8c6699212f95782818604a462d3fe97f01f273f",
+    "scripts/tradeoff_experiments.py": "6d8fdd0396a7f0ec8c96063f2c3fca6e618130752116a02dc255403f2a5d981f",
+    "scripts/train_diffusion_lora.py": "61b9c5120890df730b359b3254acd13fbd1ada7c202541adb7e9bc941d8e9220",
+    "scripts/upgrade_iterative_logging.py": "cfc3d43c79d8126b494fba0bffce33d5f8227d5572001a6185bdb85e6ccad143",
+    "scripts/validate_dard_optimization.py": "5e0a64ec991f54a2787ea40e92137ec3808919203d2573c5e14b574108821626",
+    "scripts/verify_prepared_models.py": "f8c1ad3a44136251333fe11b8daaeba3ede32d145177f4a93cdbb1df3e5a607f",
+    "storage.py": "f8a6fb0f276414a05d978e7b39259ab5293b10271caf3092f58160098e87baf5",
+    "tests/test_all_experiments.py": "4ee2a930f66e0fadd5ecdd742cc81080d1cc64c14b8a52b3f135088b6cb1ee30",
+    "tests/test_campaign_guard.py": "4e802322c9c16266aa7eb9d958f1be788b803ed08fae62d17d61e8f0ddf459d7",
+    "tests/test_campaign_reporting.py": "8f85e90411dd336f6e522c9288b0c828bcda1d1e4a2dde33c28c29928048831d",
+    "tests/test_codegen_independence.py": "72d1fbb7944262f79e3cb982a99920a232b5644d10e67102bb88782739eaf23d",
+    "tests/test_dard_attention.py": "4dc973b1e62ef51da97fbaa9be8a8ca3adb904a71bc9b168032848adbef90b0b",
+    "tests/test_dard_decoder.py": "3f86af38bbb1ee65dcdbc1abc5f7cbb3f3d8a8ec465020ab9401301eae5716c1",
+    "tests/test_dard_model_adapter.py": "a2cdc3fac9e740206db67d582eabf149c0501d6c0a188e8acc2ef6acf8693686",
+    "tests/test_datasets_evaluation.py": "f6c746ed05beaac476c85f835334dc5c2df3f0de10b97e28c6bc32a3f2bb53ab",
+    "tests/test_deadline_budget.py": "7b070c8a0bce069e1351782261acbada911df372d56b25554d9f8a40d358e43e",
+    "tests/test_diffusion_training.py": "8c5ee9930b9e3c9c63e8d72446002361082c20f11fbac0ffc539b200ff8e2538",
+    "tests/test_environment_probe.py": "9503e66ce69a4b669f7bb844180cdea07bc446e54ce3cfdb7624d96f89275a36",
+    "tests/test_experiment_analysis.py": "423c80f446b888becb63905d820fc8016ecbee32876d47837aea187eb61e8d9c",
+    "tests/test_experiment_notifications.py": "0ac14b36a3f15895ca911525a780088338dbeb0321b1f6af17fecb3b1d8d5b35",
+    "tests/test_experiment_pipeline.py": "cf3ba4165fb6acbf10659a3f9f255dbb6a03188747c5dabb47cca00fd3f8b5d8",
+    "tests/test_focused_experiments.py": "5d9143193558e320975190d089bccc95072a93c5f6249104daf69accdcbb902f",
+    "tests/test_focused_selection.py": "a65138a8cb34db43dc18945f8f24e2300ef6d15c01cab6b4f409e490771e8949",
+    "tests/test_four_gpu.py": "5df93c7659ffa91df7facba62c95f3d2b96a0e9f4bb277c83a0cffbd4cdab117",
+    "tests/test_function_benchmarks.py": "0bdfe6ccfaeef6c2c9bee46514117fe276eed17d8f901fe1f9db08b40fa12c5c",
+    "tests/test_grading_audit.py": "7a9367cea00880ae88280392a37f2d6278d809e61a59bb535f005e4312c7d735",
+    "tests/test_iteration_observability.py": "3878c40c0d1e82ea78f77c6f80ccd1084e760227cf1ede73cebcd487ddfe0b78",
+    "tests/test_iterative_controller_review.py": "12d2c35d34dc27aef7cebb3ef762f5fda5ab4dc1ae35b2175e1605f84a0421b0",
+    "tests/test_iterative_data.py": "d1fa490553ae120224a8c37206231be9cfa4b49705d886467d1e1bd6ddb77ea4",
+    "tests/test_iterative_teacher.py": "cbd0d57a2813b4760ff1433aa1e5786822f78b1bb80efb364e6f04b688bbffbc",
+    "tests/test_iterative_tuning.py": "d70b49a941394a1389dd3a6ab44b3af9ba21890d5841ba5d7b27fb7840412dc0",
+    "tests/test_iterative_worker_observability.py": "b517982e6d0694fbac36f891a92afa61fd2a0a2fe2e81c6c6e769cc731a5fa14",
+    "tests/test_local_swe_loader.py": "993ad4ee9e22ac8ebd8d6af7ddca763a4c07ffb133d5cee0615f25cdab7fecbb",
+    "tests/test_models.py": "65293448d275f357a4a8af217934407d427bfb3e7faa40c40c0ea458a30faa51",
+    "tests/test_models_adapters.py": "75e6aff94dd4ad8f3d14f4b323abb65a2f6b08eec1e15d669fd6a7cda8ac1b51",
+    "tests/test_models_mask_view.py": "e90d6f181c59b68691f8fc43f1df4d0ce607ff58f18bf25403a7d07f552184e7",
+    "tests/test_monitor_iterative_run.py": "0c2108ce6fd20e135ca4b353048bcf87eaeb4406a6ca6e5aee1925cb0dca82a9",
+    "tests/test_native_repository_preparation.py": "fb3567918696dafc7108a71840496113e2c0a2ae0dc2bc51921038b89753b997",
+    "tests/test_optimize_experiments.py": "66ef181061cb8d457180c7be2bea2ba154eca1bdede674d4dd7f69e3a9ad4388",
+    "tests/test_preparation.py": "ce69c6480eb2db3a588b89a58ae9886dece9dd10eae4da1048dbbeedfb7eabb5",
+    "tests/test_priority_experiments.py": "5c67473d06d3ea1674ff9e4e02dd4a8367472912c33b58d5e9b8abb54dc799e8",
+    "tests/test_repo_boundaries.py": "93befc0fe0209fbcb4e7c9ef76cbb6cf12ed9fb5f8a7b0ac46cf1bcdf504e594",
+    "tests/test_reporting.py": "d2a701edff5c32cc25e2f9eca38ecee09e7945f2b91a6f2617bf0193430ece90",
+    "tests/test_repository_agent.py": "ad817eea6daab130bd4c8c7769eb44841448152a83a77d6239fcda8286c1e74a",
+    "tests/test_repository_runner.py": "4ac1c379ad433c0ec0685e81d862f093538b5920c5536d602e391b5332c3c458",
+    "tests/test_reviewed_handoff.py": "8bbe5f9924a378fd030a782d070dce1cdb0092ff61e551892d837e3533503ddc",
+    "tests/test_runner_end2end.py": "df4361b7d1a29daf1bdc507d362b20b0e2e4e07592890f22d438d224ea12135c",
+    "tests/test_shards.py": "a7747f586ec507f110f6a5358b03ef87506e3b322691e29725bceb0646e4723d",
+    "tests/test_system_dependencies.py": "c2a5e416107f7b28e4ee2415a4bfcdff891c3f1a1d1b31f36e0e2f25792436c1",
+    "tests/test_tokenizer_contract.py": "7e8fe446f12080de27b798bff4ec664be1a46679106018ad3986a2f6207e53c2",
+    "tests/test_tradeoff_analysis.py": "7908c901237bfc61b67060306cf05bc222a957bbf97956e7cdccb26a5f029bac",
+    "tests/test_tradeoff_experiments.py": "166c26386aa3311c5189de090a1a7fa969f037bfdf434b28b52d7ea203f53644",
+    "tests/test_upgrade_iterative_logging.py": "0e01b479a250bf6952b8f0b34d407427b5169f4284e76d963ae7e22817b6b938",
+    "tests/test_verify_prepared_models.py": "a3cecdd5df13e23c8aeea8792cda17f52929eb8ccc568be564d3980f7931cdb5",
+    "tokenizer_contract.py": "ca9c730bc40f34e368834e447bc592903cfc8c5ad7ad08188b39b8d966110dd1",
+    "tradeoff_analysis.py": "14478f849d012fdfe200c787b92947f7d176d2535cd60fa9c0abcfdbe1faf1d1"
+  },
+  "training": "Frozen weights: base cpGRPO and the prior round-01 adapter. No gradient updates."
+}

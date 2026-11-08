@@ -1,0 +1,21 @@
+{
+  "current_training_source_sha256": {
+    "diffusion_training.py": "c4ce882b95840d72be99228c1b1ddb9e5b5b311c5e785332a0844a3f7617e2fa",
+    "iteration_observability.py": "f519df284f0935139b1baaedbaa7129aaf8e386b1cb3568ac548e402386b34b6",
+    "scripts/train_diffusion_lora.py": "aa054efea1e33abd972afbce4339cceefe8ca88f7e22aba13d62ee57b7a0038e",
+    "tokenizer_contract.py": "846dc1ea8862ed0cc1adf6dc486e3545c4801756aae7d99735dfd7988acfc3c2"
+  },
+  "evaluation_source_snapshot_sha256": {
+    "source-provenance/diffusion_training.py": "f7f95aeb74fee06d985e460c02110132ab06a8fe330980d181f8c7072b3dd4bc",
+    "source-provenance/iteration_observability.py": "f519df284f0935139b1baaedbaa7129aaf8e386b1cb3568ac548e402386b34b6",
+    "source-provenance/scripts/train_diffusion_lora.py": "61b9c5120890df730b359b3254acd13fbd1ada7c202541adb7e9bc941d8e9220",
+    "source-provenance/tokenizer_contract.py": "ca9c730bc40f34e368834e447bc592903cfc8c5ad7ad08188b39b8d966110dd1"
+  },
+  "historical_training_source_sha256": {
+    "diffusion_training.py": "732a7888017e32d81034a5a01dacacad81494d39cc5d04c88d702d392de15cbd",
+    "iteration_observability.py": "f519df284f0935139b1baaedbaa7129aaf8e386b1cb3568ac548e402386b34b6",
+    "scripts/train_diffusion_lora.py": "78df396ac2d24dbfee16e1c8572076782edf97a66f96d67451a8e7f8c3f0c37e",
+    "tokenizer_contract.py": "846dc1ea8862ed0cc1adf6dc486e3545c4801756aae7d99735dfd7988acfc3c2"
+  },
+  "note": "The historical training source bytes are not present in the original report directory; the learned adapter remains the authoritative exact weight artifact. Current trainer bytes are included for a new, explicitly labelled training run."
+}

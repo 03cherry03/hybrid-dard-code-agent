@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Source this before setup/download/benchmark commands. No directories are created.
+export HYBRID_DARD_DATA_ROOT="${HYBRID_DARD_DATA_ROOT:-${HYBRID_DARD_ROOT:-/data/hybrid-dard}}"
+export HYBRID_DARD_ROOT="$HYBRID_DARD_DATA_ROOT"
+export HF_HOME="$HYBRID_DARD_ROOT/cache/huggingface"
+export HF_HUB_CACHE="$HF_HOME/hub"
+export HF_DATASETS_CACHE="$HF_HOME/datasets"
+export HF_MODULES_CACHE="$HF_HOME/modules"
+export XDG_CACHE_HOME="$HYBRID_DARD_ROOT/cache/xdg"
+export PIP_CACHE_DIR="$HYBRID_DARD_ROOT/cache/pip"
+export CONDA_PKGS_DIRS="$HYBRID_DARD_ROOT/cache/conda"
+export TORCH_HOME="$HYBRID_DARD_ROOT/cache/torch"
+export TRITON_CACHE_DIR="$HYBRID_DARD_ROOT/cache/triton"
+export CUDA_CACHE_PATH="$HYBRID_DARD_ROOT/cache/cuda"
+export EVALPLUS_CACHE_DIR="$HYBRID_DARD_ROOT/cache/evalplus"
+export BIGCODEBENCH_CACHE_DIR="$HYBRID_DARD_ROOT/cache/bigcodebench"
+export NLTK_DATA="$HYBRID_DARD_ROOT/cache/nltk_data"
+export HYBRID_DARD_NATIVE_BIN="$HYBRID_DARD_ROOT/envs/function/bin"
+export TMPDIR="$HYBRID_DARD_ROOT/work/tmp"
+export TOKENIZERS_PARALLELISM=false
+export PYTHONDONTWRITEBYTECODE=1
+export PYTHONNOUSERSITE=1

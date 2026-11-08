@@ -1,7 +1,3 @@
-# PyTorch CUDA needs its own compatible CUDA wheel (run_server.sh installs it).
-transformers==4.51.3
-accelerate>=1.2,<2
-bitsandbytes>=0.48
-safetensors>=0.5
-huggingface_hub>=0.27
-sentencepiece
+# Compatibility entry point. Use the isolated environment setup script; do not
+# install evaluator dependencies into the inference environment or base.
+-r requirements.inference.txt

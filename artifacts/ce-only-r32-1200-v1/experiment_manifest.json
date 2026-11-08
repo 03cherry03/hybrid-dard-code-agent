@@ -1,0 +1,342 @@
+{
+  "adapter": {
+    "alpha": 64,
+    "checkpoint_step": 1200,
+    "config_sha256": "a50049c3579d78e5b50c80a37f0e92f86b4af0ff061b5eadfee5621fc73727bf",
+    "dropout": 0.05,
+    "model_sha256": "1c6d3a14b135a47a9f79eb81a547e0bee128777cf19ad85efde372907f2f83f5",
+    "rank": 32,
+    "relative_path": "adapter",
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "base_model": {
+    "name": "apple/DiffuCoder-7B-cpGRPO",
+    "revision": "98bc42bfd871eeec92fd0a8439ab34f75b405204"
+  },
+  "current_training_source": {
+    "diffusion_training.py": {
+      "bytes": 16395,
+      "path": "training-source-current/diffusion_training.py",
+      "sha256": "c4ce882b95840d72be99228c1b1ddb9e5b5b311c5e785332a0844a3f7617e2fa"
+    },
+    "iteration_observability.py": {
+      "bytes": 10003,
+      "path": "training-source-current/iteration_observability.py",
+      "sha256": "f519df284f0935139b1baaedbaa7129aaf8e386b1cb3568ac548e402386b34b6"
+    },
+    "scripts/train_diffusion_lora.py": {
+      "bytes": 33776,
+      "path": "training-source-current/scripts/train_diffusion_lora.py",
+      "sha256": "aa054efea1e33abd972afbce4339cceefe8ca88f7e22aba13d62ee57b7a0038e"
+    },
+    "tokenizer_contract.py": {
+      "bytes": 9403,
+      "path": "training-source-current/tokenizer_contract.py",
+      "sha256": "846dc1ea8862ed0cc1adf6dc486e3545c4801756aae7d99735dfd7988acfc3c2"
+    }
+  },
+  "dataset": {
+    "balanced_training": {
+      "bytes": 7539744,
+      "path": "data/balanced_training.jsonl",
+      "sha256": "725ec184925974e77dae0ac61e65099728deacc281326b958b23ec9235ee8271"
+    },
+    "holdout_tasks": {
+      "bytes": 379183,
+      "path": "data/holdout_tasks.jsonl",
+      "sha256": "56f5b21b0a04f5894c58a5cd66b8d82b80968ea3c68f9cc046f74b0113b544b4"
+    },
+    "included_examples": 1546,
+    "input_examples": 1593,
+    "post_filter_language_counts": {
+      "cpp": 215,
+      "js": 227,
+      "py": 892,
+      "rs": 212
+    },
+    "training_examples": {
+      "bytes": 2951762,
+      "path": "data/training_examples.jsonl",
+      "sha256": "184c83f26cac8ab87689dac1a194f13e420e3e4dbf49136f3442f9dd6384b2da"
+    },
+    "validation_tasks": {
+      "bytes": 356677,
+      "path": "data/validation_tasks.jsonl",
+      "sha256": "f97432bb495d3670e4fddfaa3a132a3badb9f714e1e916421e0dac63ef8843ca"
+    }
+  },
+  "evaluation": {
+    "candidate_ids": {
+      "ar": "ar-7f348bc3385bc1e4",
+      "dard": "dard-84292bb36a6aa4c8-trained",
+      "standard": "standard-5a4bd2d0c4972b81-trained"
+    },
+    "cases_per_split": 273,
+    "dard": {
+      "block_size": 128,
+      "completion_policy": "resample_then_verify",
+      "completion_verification_steps": 2,
+      "steps_per_block": 64,
+      "tau_c": 0.4,
+      "tau_u": 0.75,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "transfer_limit": 8
+    },
+    "extraction_version": "v2",
+    "generation_timeout_seconds": 120,
+    "grading_queue_size": 64,
+    "grading_timeout_seconds": 300,
+    "grading_workers": 8,
+    "holdout_seed": 20261108,
+    "repeat_seeds": [
+      20261111,
+      20261112,
+      20261113
+    ],
+    "validation_seed": 20261105
+  },
+  "experiment_id": "ce-only-diffucoder-dard-r32-1200-v1",
+  "files": {
+    "adapter/adapter_config.json": {
+      "bytes": 1057,
+      "path": "adapter/adapter_config.json",
+      "sha256": "a50049c3579d78e5b50c80a37f0e92f86b4af0ff061b5eadfee5621fc73727bf"
+    },
+    "adapter/adapter_model.safetensors": {
+      "bytes": 323014168,
+      "path": "adapter/adapter_model.safetensors",
+      "sha256": "1c6d3a14b135a47a9f79eb81a547e0bee128777cf19ad85efde372907f2f83f5"
+    },
+    "data/balanced_training.jsonl": {
+      "bytes": 7539744,
+      "path": "data/balanced_training.jsonl",
+      "sha256": "725ec184925974e77dae0ac61e65099728deacc281326b958b23ec9235ee8271"
+    },
+    "data/data_accounting.json": {
+      "bytes": 267858,
+      "path": "data/data_accounting.json",
+      "sha256": "4c1257775145120983b0d79ddef1fe572797233aad77a81c3ae0b232c836fad6"
+    },
+    "data/holdout_tasks.jsonl": {
+      "bytes": 379183,
+      "path": "data/holdout_tasks.jsonl",
+      "sha256": "56f5b21b0a04f5894c58a5cd66b8d82b80968ea3c68f9cc046f74b0113b544b4"
+    },
+    "data/split_manifest.json": {
+      "bytes": 64301,
+      "path": "data/split_manifest.json",
+      "sha256": "3b8e99e74e9d43532e12d7319a930772d8b95188099bb2ecd1d2fc57532e3e86"
+    },
+    "data/training_examples.jsonl": {
+      "bytes": 2951762,
+      "path": "data/training_examples.jsonl",
+      "sha256": "184c83f26cac8ab87689dac1a194f13e420e3e4dbf49136f3442f9dd6384b2da"
+    },
+    "data/validation_tasks.jsonl": {
+      "bytes": 356677,
+      "path": "data/validation_tasks.jsonl",
+      "sha256": "f97432bb495d3670e4fddfaa3a132a3badb9f714e1e916421e0dac63ef8843ca"
+    },
+    "metadata/balanced_training.receipt.json": {
+      "bytes": 271,
+      "path": "metadata/balanced_training.receipt.json",
+      "sha256": "c0cb579d04fe4d11a6f6fd2052401534c045ec7ad0e27bf7bfca2fbf3f0a52ef"
+    },
+    "metadata/source_provenance.json": {
+      "bytes": 1665,
+      "path": "metadata/source_provenance.json",
+      "sha256": "35c128a72ae9febf3bd4898b5dca84a8186a70a4fb776fe42c964c122955a49f"
+    },
+    "metadata/training_checkpoint_manifest.json": {
+      "bytes": 1764,
+      "path": "metadata/training_checkpoint_manifest.json",
+      "sha256": "f657dafd7243e05a7f8eb1b69613545215165ecc809baed7cb15328bbceb46ce"
+    },
+    "metadata/training_config.json": {
+      "bytes": 4270,
+      "path": "metadata/training_config.json",
+      "sha256": "26dd6b37f4c534563c3307c2452676519f37def46be464d95d596443216aea58"
+    },
+    "metadata/training_state.json": {
+      "bytes": 676,
+      "path": "metadata/training_state.json",
+      "sha256": "b6185b9456050e808a0f2f4778e50bcdd3ec2fcbc054e660e211e4521a82c893"
+    },
+    "report/CE_ONLY_EXPERIMENT_REPORT_KO.md": {
+      "bytes": 28218,
+      "path": "report/CE_ONLY_EXPERIMENT_REPORT_KO.md",
+      "sha256": "29becef675c78699c4e5b0ff463620738342fbd5aa96aab8db32bab01920b5c9"
+    },
+    "report/CE_ONLY_SUMMARY.md": {
+      "bytes": 825,
+      "path": "report/CE_ONLY_SUMMARY.md",
+      "sha256": "84f07f15496c618325e56943a51cf8f98ca04f0ee491b94e1ae27080db17d657"
+    },
+    "report/ce_only_summary.json": {
+      "bytes": 2495,
+      "path": "report/ce_only_summary.json",
+      "sha256": "a888a6f0543f4b31b329ea374c1d2e7b25f1fa8cf30ac390135e6414acde0c0e"
+    },
+    "report/focused_full_result.json": {
+      "bytes": 36487,
+      "path": "report/focused_full_result.json",
+      "sha256": "d251168f2cacf61c38fd8b306c2f4511072e8b6f08964e563737fbad16b799fa"
+    },
+    "source-provenance/diffusion_training.py": {
+      "bytes": 13086,
+      "path": "source-provenance/diffusion_training.py",
+      "sha256": "f7f95aeb74fee06d985e460c02110132ab06a8fe330980d181f8c7072b3dd4bc"
+    },
+    "source-provenance/iteration_observability.py": {
+      "bytes": 10003,
+      "path": "source-provenance/iteration_observability.py",
+      "sha256": "f519df284f0935139b1baaedbaa7129aaf8e386b1cb3568ac548e402386b34b6"
+    },
+    "source-provenance/iteration_plan.json": {
+      "bytes": 185095,
+      "path": "source-provenance/iteration_plan.json",
+      "sha256": "1e788f3f724e03da39bfad759d5a4797061fd386af284697cc9467eb6dbf6d4a"
+    },
+    "source-provenance/scripts/train_diffusion_lora.py": {
+      "bytes": 30435,
+      "path": "source-provenance/scripts/train_diffusion_lora.py",
+      "sha256": "61b9c5120890df730b359b3254acd13fbd1ada7c202541adb7e9bc941d8e9220"
+    },
+    "source-provenance/tokenizer_contract.py": {
+      "bytes": 6407,
+      "path": "source-provenance/tokenizer_contract.py",
+      "sha256": "ca9c730bc40f34e368834e447bc592903cfc8c5ad7ad08188b39b8d966110dd1"
+    },
+    "training-source-current/diffusion_training.py": {
+      "bytes": 16395,
+      "path": "training-source-current/diffusion_training.py",
+      "sha256": "c4ce882b95840d72be99228c1b1ddb9e5b5b311c5e785332a0844a3f7617e2fa"
+    },
+    "training-source-current/iteration_observability.py": {
+      "bytes": 10003,
+      "path": "training-source-current/iteration_observability.py",
+      "sha256": "f519df284f0935139b1baaedbaa7129aaf8e386b1cb3568ac548e402386b34b6"
+    },
+    "training-source-current/scripts/train_diffusion_lora.py": {
+      "bytes": 33776,
+      "path": "training-source-current/scripts/train_diffusion_lora.py",
+      "sha256": "aa054efea1e33abd972afbce4339cceefe8ca88f7e22aba13d62ee57b7a0038e"
+    },
+    "training-source-current/tokenizer_contract.py": {
+      "bytes": 9403,
+      "path": "training-source-current/tokenizer_contract.py",
+      "sha256": "846dc1ea8862ed0cc1adf6dc486e3545c4801756aae7d99735dfd7988acfc3c2"
+    }
+  },
+  "purpose": "Portable CE-only adapter and evidence bundle for exact protocol reuse.",
+  "report_metrics": {
+    "holdout": {
+      "ar": {
+        "cases": 273,
+        "mean_generation_seconds": 1.6780123406593406,
+        "p95_generation_seconds": 3.696649,
+        "pass_rate": 0.6593406593406593,
+        "pass_rate_percent": 65.93406593406593,
+        "passed": 180
+      },
+      "dard": {
+        "cases": 273,
+        "mean_generation_seconds": 1.7439661868131868,
+        "p95_generation_seconds": 2.589458,
+        "pass_rate": 0.3516483516483517,
+        "pass_rate_percent": 35.16483516483517,
+        "passed": 96
+      },
+      "standard": {
+        "cases": 273,
+        "mean_generation_seconds": 1.3809105677655678,
+        "p95_generation_seconds": 1.754138,
+        "pass_rate": 0.03663003663003663,
+        "pass_rate_percent": 3.6630036630036633,
+        "passed": 10
+      }
+    },
+    "validation": {
+      "ar": {
+        "cases": 273,
+        "mean_generation_seconds": 1.5385061172161172,
+        "p95_generation_seconds": 3.477754,
+        "pass_rate": 0.7252747252747253,
+        "pass_rate_percent": 72.52747252747253,
+        "passed": 198
+      },
+      "dard": {
+        "cases": 273,
+        "mean_generation_seconds": 1.7093296410256411,
+        "p95_generation_seconds": 2.674202,
+        "pass_rate": 0.4139194139194139,
+        "pass_rate_percent": 41.39194139194139,
+        "passed": 113
+      },
+      "standard": {
+        "cases": 273,
+        "mean_generation_seconds": 1.3622988131868132,
+        "p95_generation_seconds": 1.622403,
+        "pass_rate": 0.040293040293040296,
+        "pass_rate_percent": 4.029304029304029,
+        "passed": 11
+      }
+    }
+  },
+  "schema_version": 1,
+  "source_hashes_recorded_by_training": {
+    "diffusion_training.py": "732a7888017e32d81034a5a01dacacad81494d39cc5d04c88d702d392de15cbd",
+    "iteration_observability.py": "f519df284f0935139b1baaedbaa7129aaf8e386b1cb3568ac548e402386b34b6",
+    "scripts/train_diffusion_lora.py": "78df396ac2d24dbfee16e1c8572076782edf97a66f96d67451a8e7f8c3f0c37e",
+    "tokenizer_contract.py": "846dc1ea8862ed0cc1adf6dc486e3545c4801756aae7d99735dfd7988acfc3c2"
+  },
+  "source_provenance": {
+    "current_training_source_sha256": {
+      "diffusion_training.py": "c4ce882b95840d72be99228c1b1ddb9e5b5b311c5e785332a0844a3f7617e2fa",
+      "iteration_observability.py": "f519df284f0935139b1baaedbaa7129aaf8e386b1cb3568ac548e402386b34b6",
+      "scripts/train_diffusion_lora.py": "aa054efea1e33abd972afbce4339cceefe8ca88f7e22aba13d62ee57b7a0038e",
+      "tokenizer_contract.py": "846dc1ea8862ed0cc1adf6dc486e3545c4801756aae7d99735dfd7988acfc3c2"
+    },
+    "evaluation_source_snapshot_sha256": {
+      "source-provenance/diffusion_training.py": "f7f95aeb74fee06d985e460c02110132ab06a8fe330980d181f8c7072b3dd4bc",
+      "source-provenance/iteration_observability.py": "f519df284f0935139b1baaedbaa7129aaf8e386b1cb3568ac548e402386b34b6",
+      "source-provenance/scripts/train_diffusion_lora.py": "61b9c5120890df730b359b3254acd13fbd1ada7c202541adb7e9bc941d8e9220",
+      "source-provenance/tokenizer_contract.py": "ca9c730bc40f34e368834e447bc592903cfc8c5ad7ad08188b39b8d966110dd1"
+    },
+    "historical_training_source_sha256": {
+      "diffusion_training.py": "732a7888017e32d81034a5a01dacacad81494d39cc5d04c88d702d392de15cbd",
+      "iteration_observability.py": "f519df284f0935139b1baaedbaa7129aaf8e386b1cb3568ac548e402386b34b6",
+      "scripts/train_diffusion_lora.py": "78df396ac2d24dbfee16e1c8572076782edf97a66f96d67451a8e7f8c3f0c37e",
+      "tokenizer_contract.py": "846dc1ea8862ed0cc1adf6dc486e3545c4801756aae7d99735dfd7988acfc3c2"
+    },
+    "note": "The historical training source bytes are not present in the original report directory; the learned adapter remains the authoritative exact weight artifact. Current trainer bytes are included for a new, explicitly labelled training run."
+  },
+  "training": {
+    "balanced_languages": true,
+    "batch_size_per_rank": 1,
+    "gradient_accumulation": 2,
+    "learning_rate": 1e-05,
+    "max_grad_norm": 1.0,
+    "max_length": 512,
+    "max_steps": 1200,
+    "min_mask_prob": 0.15,
+    "seed": 20261108,
+    "warmup_steps": 5,
+    "weight_decay": 0.01,
+    "world_size": 4
+  },
+  "training_config": {
+    "bytes": 4270,
+    "path": "metadata/training_config.json",
+    "sha256": "26dd6b37f4c534563c3307c2452676519f37def46be464d95d596443216aea58"
+  }
+}

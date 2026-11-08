@@ -1,0 +1,82 @@
+{
+  "metrics": {
+    "holdout": {
+      "ar": {
+        "cases": 273,
+        "mean_generation_seconds": 1.6780123406593406,
+        "p95_generation_seconds": 3.696649,
+        "pass_rate": 0.6593406593406593,
+        "pass_rate_percent": 65.93406593406593,
+        "passed": 180
+      },
+      "dard": {
+        "cases": 273,
+        "mean_generation_seconds": 1.7439661868131868,
+        "p95_generation_seconds": 2.589458,
+        "pass_rate": 0.3516483516483517,
+        "pass_rate_percent": 35.16483516483517,
+        "passed": 96
+      },
+      "standard": {
+        "cases": 273,
+        "mean_generation_seconds": 1.3809105677655678,
+        "p95_generation_seconds": 1.754138,
+        "pass_rate": 0.03663003663003663,
+        "pass_rate_percent": 3.6630036630036633,
+        "passed": 10
+      }
+    },
+    "validation": {
+      "ar": {
+        "cases": 273,
+        "mean_generation_seconds": 1.5385061172161172,
+        "p95_generation_seconds": 3.477754,
+        "pass_rate": 0.7252747252747253,
+        "pass_rate_percent": 72.52747252747253,
+        "passed": 198
+      },
+      "dard": {
+        "cases": 273,
+        "mean_generation_seconds": 1.7093296410256411,
+        "p95_generation_seconds": 2.674202,
+        "pass_rate": 0.4139194139194139,
+        "pass_rate_percent": 41.39194139194139,
+        "passed": 113
+      },
+      "standard": {
+        "cases": 273,
+        "mean_generation_seconds": 1.3622988131868132,
+        "p95_generation_seconds": 1.622403,
+        "pass_rate": 0.040293040293040296,
+        "pass_rate_percent": 4.029304029304029,
+        "passed": 11
+      }
+    }
+  },
+  "objective": "masked_ce_only",
+  "selected_dard_parameters": {
+    "block_size": 128,
+    "completion_policy": "resample_then_verify",
+    "completion_verification_steps": 2,
+    "steps_per_block": 64,
+    "tau_c": 0.4,
+    "tau_u": 0.75,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "transfer_limit": 8
+  },
+  "selection_note": "DARD candidate was selected from validation; holdout is reported after selection.",
+  "source_result": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/focused_full_result.json",
+  "splits": [
+    "validation",
+    "holdout"
+  ],
+  "status": "completed",
+  "training": {
+    "balanced_languages": true,
+    "checkpoint": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200/training/checkpoints/step-00001200",
+    "learning_rate": 1e-05,
+    "lora_rank": 32,
+    "steps": 1200
+  }
+}

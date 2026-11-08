@@ -1,291 +1,128 @@
-# HybridDARD
-
-**A hybrid autoregressive–diffusion coding agent with dependency-aware revocable decoding.**
-
-HybridDARD is a research project exploring whether a diffusion language model (dLLM) can make code generation and test-driven repair more efficient, with an autoregressive (AR) model responsible for planning, reviewing, and fallback.
-
-> **Project Status:** This repository currently contains a benchmark pipeline for DiffuCoder-7B standard decoding and an independent DARD-style research implementation. AR + dLLM orchestration is planned but not yet implemented. Full server-GPU validation is pending.
-
-## 1. Project Overview
-
-The goal of HybridDARD is to develop a local coding agent that combines the strengths of autoregressive and diffusion language models.
+# Hybrid DARD Code Agent — independent code-generation evaluation
 
-Traditional AR models generate code sequentially, while diffusion language models can predict and refine multiple tokens simultaneously.
+Compare Qwen2.5-Coder-7B-Instruct, standard DiffuCoder-7B-Instruct, and the same DiffuCoder with DARD using shared tasks, tools, precision and budgets. The default scope measures function code generation and repair in Python, C++, Rust and JavaScript. Library-use evaluation is excluded. DARD is an independent Dream adapter; real model speed/quality gains remain unproven.
 
-We investigate whether **Dependency-Aware Revocable Decoding (DARD)** can improve diffusion-based code generation and repair, particularly when correctness and computational efficiency must be balanced.
+The active deadline campaign uses `--focused-codegen`: one matched pass of AR, DARD and native diffusion over Python, Rust, JavaScript and C++, with no repair feedback. Both diffusion methods use a 512-token generation canvas. Native diffusion uses 64 steps; DARD uses at most 64 verification steps, thresholds `.5/.8`, and no cap on threshold-qualified parallel commits. `generation_settings.json` freezes these settings before calibration and evaluation.
 
-### Research Objectives
-
-1. Compare standard diffusion decoding with DARD-style decoding.
-2. Evaluate code generation accuracy, repair success, and inference latency.
-3. Develop a hybrid architecture combining AR planning with diffusion-based code generation.
-4. Extend evaluation from function-level tasks to repository-level software engineering problems.
+The corrected DARD adapter implements original/masked-shadow keys, confidence-ordered candidate verification, M/C/U revocation, and the paper ratio `(P+p0)/(P+D+p0)`. Separate predictor queries adapt Dream's shifted logits; this remains an independent adaptation, not author-code reproduction. An all-masked state uses native prediction directly. Exact greedy fixed points and repeated states enter a bounded completion fallback, whose work is recorded separately. Full generated IDs, text before control-token cleanup, and terminal ID/position are preserved. Quality and speed claims require measured paired results.
 
-## 2. Proposed Architecture
+## One-command pipeline
 
-```text
-              User Request
-                    |
-                    v
-           +------------------+
-           |     AR Model     |
-           | Planning/Context |
-           +------------------+
-                    |
-                    v
-           +------------------+
-           |   dLLM + DARD    |
-           |  Code Generation |
-           +------------------+
-                    |
-                    v
-           +------------------+
-           |  Test Execution  |
-           +------------------+
-                    |
-             Pass / Fail
-               /     \
-              /       \
-           Pass       Fail
-            |           |
-            v           v
-        AR Review   dLLM + DARD
-                     Code Repair
-                         |
-                  Repeated Failure
-                         |
-                         v
-                    AR Fallback
-```
+~~~bash
+cd /home/leejwian1955/hybrid-dard-code-agent
+bash scripts/run_all_experiments.sh --scope functions --prepare --execute \
+  --output /data/hybrid-dard/results/code-generation
+~~~
 
-This is the **target architecture**. The current repository implements the diffusion-based generation, decoding, testing, and repair components. Full AR orchestration remains future work.
+`--scope functions` is the default. `--prepare` installs only the inference, language-tool and EvalPlus environments and downloads the two models. Without `--execute`, only write the plan and inspect notification metadata. Prepared code-generation datasets are verified rather than downloaded again. Use a new output directory when changing scope/protocol/settings; prior results are preserved.
 
-## 3. Current Implementation
+The default path does not run SWE data checks, native repository preparation, system dependency checks or BigCodeBench installation. TeX, browsers, additional locales and sudo setup are unnecessary. Missing or corrupt out-of-scope SWE/BigCodeBench data does not block selected code-generation data verification.
 
-| Component                         | Status      |
-| --------------------------------- | ----------- |
-| DiffuCoder-7B-Instruct inference  | Implemented |
-| Standard diffusion decoding       | Implemented |
-| Independent DARD-style decoding   | Implemented |
-| Token verification and revocation | Implemented |
-| Adaptive logit mixing             | Implemented |
-| Python/Rust code generation       | Implemented |
-| Automated test execution          | Implemented |
-| Test-feedback code repair         | Implemented |
-| Benchmark evaluation and logging  | Implemented |
-| AR planning and review            | Planned     |
-| Hybrid AR–dLLM orchestration      | Planned     |
-| Repository-level coding agent     | Planned     |
+Stages: GPU/code-generation data checks → optional preparation → function smoke → full generation/repair/final grading → analysis. Four GPUs process disjoint tasks; all three backends and repeated seeds for one task remain on the same GPU. Failures stop the pipeline and trigger email. Wrong generated answers remain normal measured outcomes.
 
-**Note:** The DARD decoder is an independent research implementation based on mechanisms described in the paper, not the authors' official implementation. Its exact paper fidelity and full GPU integration require further validation.
+## Environments and data
 
-## 4. Models
+Datasets, model/cache storage, isolated environments, temporary trials and results are rooted at `/data/hybrid-dard` (`HYBRID_DARD_DATA_ROOT` override). Use the existing Conda installation to create separate prefixes; base remains unchanged.
 
-### Autoregressive LLM
+~~~bash
+source scripts/runtime_env.sh
+bash scripts/setup_env.sh functions
+"$HYBRID_DARD_ROOT/envs/inference/bin/python" scripts/download_models.py --download
+python3 prepare_data.py --scope functions --verify
+python3 environment_probe.py --scope functions
+~~~
 
-**Qwen2.5-Coder**
+Prefixes: `inference` (Python 3.11, torch 2.7.1+cu118, Transformers 4.51.3), `function` (native language/build tools), `evalplus` (Python 3.11, EvalPlus 0.3.1). Installed package inventories are saved in `envs/locks`. For a new data root, explicitly prepare the selected data with `python3 prepare_data.py --scope functions --download`.
 
-Intended responsibilities:
+BigCodeBench data and old results are preserved for historical compatibility, but the current CLI, pipeline and setup exclude it. EvalPlus strengthens tests for the existing function problems; it does not add library-use tasks.
 
-* Task understanding
-* Planning
-* Context selection
-* Final code review
-* Fallback generation
+| Evaluation | Scope |
+| --- | --- |
+| HumanEval / MBPP | Python, 164 / 500 tasks |
+| MultiPL-E | Rust/JavaScript/C++, 1,156 translated task variants |
+| HumanEval+ / MBPP+ | Python, 164 / 378, official base+plus tests |
 
-An initial standalone AR baseline has been tested. Integration into the current benchmark repository is planned.
+The 10 function suites contain 2,362 variants, including correlated translations/augmented tests. Public feedback drives repairs; final tests run only after submissions freeze. Default `--runner local`; `--runner none --repairs 0` records generation only and cannot report accuracy. These results measure function generation/repair, not repository issue resolution.
 
-### Diffusion LLM
+## Optional, separate repository workflow
 
-**DiffuCoder-7B-Instruct**
+The retained SWE-bench Verified (500) and Multilingual (300) evaluators run only when explicitly selected with `--scope repositories` or `--scope all`. Neither scope includes BigCodeBench. Only this optional workflow needs the repository system dependencies. Use a separate output:
 
-Responsibilities:
+~~~bash
+bash scripts/setup_system_dependencies.sh
+bash scripts/run_all_experiments.sh --scope repositories --prepare --execute \
+  --output /data/hybrid-dard/results/repository-experiments-local
+~~~
 
-* Code generation
-* Test-driven code repair
-* Diffusion decoding experiments
+Individual repository preparation commands:
 
-The current pipeline supports standard decoding and an independent DARD-style decoder.
+~~~bash
+"$HYBRID_DARD_ROOT/envs/swebench/bin/python" scripts/prepare_repositories.py \
+  --suite swebench_verified --limit 0 --prepare --data-root "$HYBRID_DARD_ROOT"
+"$HYBRID_DARD_ROOT/envs/swebench/bin/python" scripts/prepare_repositories.py \
+  --suite swebench_multilingual --limit 0 --prepare --data-root "$HYBRID_DARD_ROOT"
+~~~
 
-## 5. Benchmarks
+Pinned setup recipes prepare the original base commit and a per-task environment, then validate original/reference-patched controls before publishing `repositories.lock.json`. Missing or unmapped dependencies fail explicitly, never silently remove tasks. Actual build success for all 800 tasks requires running preparation.
 
-The project uses the following function-level benchmarks:
+Each agent gets a fresh source copy and offline Conda clone with local read/search/edit/run/finish tools. Original Git history is stripped from the agent workspace; final grading uses a separate checkout preserving original history. Official test scripts undergo explicit infrastructure-path adaptation, with original/adapted hashes recorded. Official log parsers and fail-to-pass/pass-to-pass resolution rules remain, while results identify the native backend. Identified infrastructure failures remain unknown outcomes; candidate syntax/compile errors and failing tests are unresolved submissions.
 
-| Benchmark | Language | Evaluation                          |
-| --------- | -------- | ----------------------------------- |
-| HumanEval | Python   | Function generation and unit tests  |
-| MBPP      | Python   | Programming problems and unit tests |
-| MultiPL-E | Rust     | Multilingual function generation    |
+Local processes share the user's host access. Temporary directories and path-limited file tools are not a security sandbox. Final tests are excluded from model input and repair feedback, but OS-level access isolation is not claimed.
 
-The loaders support 164 HumanEval tasks, 500 MBPP test-split tasks, and the available MultiPL-E HumanEval-Rust tasks.
+Environment change detection uses file metadata, not a full content-integrity proof. Default command limits cover wall time, retained output and child-process cleanup; they do not reserve CPU or RAM per task.
 
-### Evaluation Metrics
+## Four-GPU runs and diagnostics
 
-* **First-attempt success:** Correctness of the initial generated solution.
-* **Final success:** Correctness after allowed repair attempts.
-* **Repair success rate:** Fraction of initially failed tasks resolved through repair.
-* **Execution time:** Generation, testing, and total task completion time.
-* **Model forward passes:** Number of model inference passes.
-* **GPU memory usage:** Peak allocated GPU memory.
-* **Error categories:** Syntax, compilation, runtime, and test failures.
-* **DARD diagnostics:** Token promotion, revocation, forced completion, and attention fallback statistics.
+~~~bash
+bash scripts/run_four_gpu.sh functions --gpus 0,1,2,3 \
+  --limit 0 --repeats 3 --tokens 512 --standard-steps 512 \
+  --diagnostics summary --output /data/hybrid-dard/results/code-generation-direct --execute --fail-fast
+~~~
 
-> The current evaluation asks models to generate complete functions rather than using the official completion-only benchmark protocol. Reported pilot success rates are not directly comparable with official HumanEval/MultiPL-E pass@1 scores.
+The code-generation partition is 591/591/590/590 variants. Three backends and three repetitions produce 21,258 cases, plus a separate smoke run. Plans freeze GPU UUIDs, tasks/seeds, commands and source/environment fingerprints. Shared host CPU/RAM/I/O can affect latency; this is a concurrent campaign, not an isolated single-agent latency claim. Do not average shard speedups. Pooled confidence intervals are not implemented.
 
-## 6. Getting Started
+`functions/campaign_summary.json` pools counts and all three paired comparisons using ratios of summed times over the complete matched cohort. Unknown infrastructure outcomes and failed-solution time remain visible. Separate phase accounting retains load, warmup and retry costs; accumulated worker hours are distinct from elapsed four-GPU campaign time. The default is a single fixed operating point. Temperature-zero repetitions are timing replications, not independent pass@k samples. Broader superiority claims require a separate development split and accuracy/time sweeps including lower-step standard diffusion; this DARD comparison includes its complete block, verification and stopping policy.
 
-### Requirements
+`summary` measures performance; `steps` records decoder transitions; `profile` records synchronized component timings. Detailed instrumentation can affect both latency and deadline-limited outcomes, so confirm changes in a new summary run. Forced completion and revocations remain measured algorithm behavior. `experiment_analysis.py --run DIR` writes evidence-linked JSON/Markdown/CSV. `experiment_journal.py` records intent, observations and decisions. Dev/test labels declare intent, not automatic source-ID separation.
 
-* Linux server
-* NVIDIA GPU with compatible CUDA drivers
-* Python 3.10–3.11 recommended
-* PyTorch with CUDA support
-* Docker for executing generated code
+## Notifications and resume
 
-Model weights and benchmark datasets are downloaded automatically when needed.
+Failure email goes to `leejwian@gmail.com` using LERRA's private `~/.config/lerra_ft_comparison/gmail_app_password`. Override the path with `HYBRID_DARD_MAIL_PASSWORD_FILE` or `LERRA_MAIL_PASSWORD_FILE`. Credentials are not copied into code/arguments/email. `--check-email` authenticates only, `--test-email` explicitly sends a test, and `--retry-email --output DIR` retries queued failures without running experiments.
 
-### Step 1. Run Unit Tests
+The separate supervisor monitors stage/worker exceptions, nonzero exits and signals, cleans owned descendants, and records pending mail/SMTP acceptance. SMTP acceptance is not inbox confirmation. Resume with identical code/settings/output; successful artifact hashes are verified before stages are skipped. Frozen repository error submissions require a new experiment to regenerate. Host power loss or supervisor SIGKILL requires external monitoring for immediate alerts; incomplete prior state is checked on the next launch.
 
-```bash
-python3 -m unittest discover -s tests -v
-```
+Frozen source hashes are rechecked at stage boundaries and immediately before GPU workers launch. Function `--fail-fast` persists the first infrastructure failure and stops before later cases/backends, while incorrect generated code remains a normal evaluated outcome. A recorded review gate can be handed over with `scripts/resume_reviewed_experiments.py --previous-output OLD --output NEW --execute`: it waits for the existing downloader, preserves the old run, and launches the freshly frozen pipeline without installation or additional model downloads. See `NEW/audit_handoff.json` and then `NEW/pipeline_state.json`. The old supervisor's termination notification corresponds to the planned `OLD/audit_replacement.json` record.
 
-These tests verify decoder logic and benchmark infrastructure without requiring the full 7B model.
+## Bounded optimization campaign
 
-### Step 2. Smoke-Test Code Generation
+The compact decoder keeps original predictor queries only for masked positions. The per-instance Dream adapter projects K/V only from the `P+2B` context rows and uses rectangular attention; query length becomes `P+3B+|M|`. Native generation delegates to the original attention implementation. No cross-step KV caching or verification skipping is introduced. Use `--no-compact-queries --no-rectangular-attention` for the legacy calculation. BF16 shape changes require real-model validation even when CPU calculations agree.
 
-Without executing generated code:
+`scripts/optimize_experiments.py` waits for the preserved baseline and GPU ownership to clear, then requires the numerical/GPU gate in `scripts/validate_dard_optimization.py`. A frozen identity-only partition reserves 16 sources across four languages for development and excludes them from the new 344-source final evaluation. Existing full-baseline results remain exploratory. Candidate scope is Instruct plus one optional pinned official cpGRPO checkpoint; native256 is a quality diagnostic only. The final evaluation compares AR, DARD and native64 with the same selected diffusion weights. A predeclared three-percentage-point development screen is not proof of statistical noninferiority. Failure notifications, immutable plans, bounded retries, and the absolute deadline remain enforced.
 
-```bash
-RUNNER=none LIMIT=1 bash run_server.sh \
-  --tokens 128 \
-  --standard-steps 128 \
-  --block-size 64 \
-  --dard-steps 96
-```
-
-This runs both standard diffusion decoding and DARD-style decoding.
-
-### Step 3. Test Generation and Repair
-
-With Docker installed and running:
-
-```bash
-LIMIT=1 bash run_server.sh \
-  --tokens 128 \
-  --standard-steps 128 \
-  --block-size 64 \
-  --dard-steps 96
-```
+## Validation
 
-The pipeline generates code, executes tests in restricted Docker containers, and attempts repair when tests fail.
+~~~bash
+PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+  python3 -m unittest discover -s tests -v
+~~~
 
-### Step 4. Run Larger Benchmarks
+Tests cover CPU logic, small local programs and mocked evaluators. They do not establish real 7B performance or successful full native benchmark provisioning. See [the Korean guide](README_KO.md) for detailed commands.
 
-```bash
-LIMIT=30 bash run_server.sh
-```
+## Reproduce the CE-only r32/1200 report
 
-The limit applies separately to each benchmark suite.
+Use `scripts/reproduce_ce_only.py` with a verified four-GPU plan and the frozen train/validation/holdout JSONL files. It fixes the masked-CE training arguments, the three report candidates, validation seeds `20261105, 20261111, 20261112, 20261113`, holdout seed `20261108`, and the DARD operating point. Hashes and immutable manifests are written before evaluation; changed data or adapters stop the run.
 
-For custom experiments:
+~~~bash
+/data/hybrid-dard/envs/iterative-training/bin/python scripts/reproduce_ce_only.py \
+  --base-plan /data/hybrid-dard/results/code-generation-tradeoff-20261107/iteration_plan.json \
+  --data /data/hybrid-dard/results/code-generation-iterative-20261107/data \
+  --output /data/hybrid-dard/results/ce-only-r32-1200 \
+  --deadline-unix 1794225600
+~~~
 
-```bash
-python main.py \
-  --suites humaneval,mbpp,multiple_rs \
-  --decoders standard,dard \
-  --limit 30 \
-  --quant 4bit \
-  --tokens 256 \
-  --standard-steps 256 \
-  --block-size 128 \
-  --dard-steps 192 \
-  --runner docker \
-  --pull-images \
-  --repairs 1 \
-  --output results/experiment1
-```
+The completed 1,200-step adapter and its SHA256-pinned data/config bundle are in `artifacts/ce-only-r32-1200-v1/`. Reuse its `adapter/` directory with `--adapter-path` to skip training while keeping the exact learned weights. `experiment_manifest.json` records the pinned base revision, training contract, candidate IDs, and report metrics; the large adapter file is tracked with Git LFS.
 
-## 7. Results
+The bundle separates the historical evaluation source provenance from the current trainer source; the original training source bytes are unavailable, while the learned adapter itself is preserved exactly.
 
-Experimental results are automatically stored in:
-
-```text
-results/
-└── experiment1/
-    ├── config.json
-    ├── results.csv
-    ├── summary.json
-    ├── runs.jsonl
-    ├── case_results.jsonl
-    └── errors.jsonl
-```
-
-The system records generation attempts, correctness, repair outcomes, inference time, model forward passes, and decoding diagnostics.
-
-**Current research status:** CPU-side unit and mocked integration tests have passed. Full validation of the independent DARD decoder on the target server GPU is still required.
-
-## 8. Project Structure
-
-```text
-HybridDARD/
-│
-├── main.py
-├── models.py
-├── dard_decoder.py
-├── datasets_code.py
-├── evaluation.py
-├── run_server.sh
-├── requirements.txt
-│
-├── tests/
-│   ├── test_dard_decoder.py
-│   └── test_runner_end2end.py
-│
-├── README.md
-└── README_KO.md
-```
-
-### Main Components
-
-* `main.py`: Benchmark execution and experiment management
-* `models.py`: DiffuCoder model interface
-* `dard_decoder.py`: Independent DARD-style decoding implementation
-* `datasets_code.py`: Benchmark loading
-* `evaluation.py`: Docker-based code evaluation
-* `run_server.sh`: Server setup and execution
-
-## 9. Research Roadmap
-
-* [x] Build local AR coding baseline
-* [x] Run DiffuCoder-7B locally
-* [x] Implement function-level benchmark pipeline
-* [x] Implement an independent DARD-style decoder
-* [x] Implement automated testing and repair
-* [ ] Validate DARD inference on a server GPU
-* [ ] Verify decoding correctness and performance
-* [ ] Integrate AR model into the benchmark pipeline
-* [ ] Implement hybrid AR–dLLM coding agent
-* [ ] Extend to repository-level benchmarks
-* [ ] Conduct controlled accuracy–latency comparisons
-
-## 10. Limitations
-
-This project is currently a research prototype.
-
-The independent DARD implementation has not been confirmed to reproduce the original paper's exact implementation or results.
-
-If custom attention masks are unsupported, the decoder may use a slower verification fallback. These cases must be distinguished during performance analysis.
-
-Generated code is executed only through the configured Docker evaluation system. Docker restrictions reduce risk but do not provide a perfect security boundary.
-
-## 11. References
-
-1. [Dependency-Aware Revocable Decoding for Efficient Diffusion Large Language Model Inference](https://arxiv.org/abs/2608.26574)
-2. [DiffuCoder-7B-Instruct](https://huggingface.co/apple/DiffuCoder-7B-Instruct)
-3. [DiffuCoder GitHub](https://github.com/apple-aiml-research/ml-diffucoder)
-4. [HumanEval](https://github.com/openai/human-eval)
-5. [MultiPL-E](https://github.com/nuprl/MultiPL-E)
-6. [MBPP](https://github.com/google-research/google-research/tree/master/mbpp)
-
-This is an independent educational and research project.
+For adapter reuse with the bundled data, add `--adapter-path artifacts/ce-only-r32-1200-v1/adapter --data artifacts/ce-only-r32-1200-v1/data` to the command above.
+Before sharing or using the bundle, verify it with `/data/hybrid-dard/envs/iterative-training/bin/python scripts/reproduce_ce_only.py --verify-bundle artifacts/ce-only-r32-1200-v1`.

@@ -1,0 +1,16 @@
+{
+  "checkpoint": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200/training/checkpoints/step-00001200",
+  "epoch": 2,
+  "examples_seen_global": 9600,
+  "final_adapter": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200/training/final_adapter",
+  "global_step": 1200,
+  "invocation_wall_s": 733.7233755588531,
+  "microbatches_seen_per_rank": 2400,
+  "next_batch": 616,
+  "planned_steps": 1200,
+  "status": "completed",
+  "stop_reason": "max_steps",
+  "trainable_parameters": 80740352,
+  "training_fingerprint": "0d8d8a8a517969b241231dfd75c965b99c23c5f921e7c4427fc5cf2860dbc85f",
+  "updated_unix": 1794069242.4571216
+}

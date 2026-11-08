@@ -1,0 +1,12 @@
+{
+  "balanced_rows": 3648,
+  "counts": {
+    "cpp": 232,
+    "js": 231,
+    "py": 912,
+    "rs": 218
+  },
+  "source": "/data/hybrid-dard/results/code-generation-iterative-20261107/data/training_examples.jsonl",
+  "source_rows": 1593,
+  "target_count_per_language": 912
+}

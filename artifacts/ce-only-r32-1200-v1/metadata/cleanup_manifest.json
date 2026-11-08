@@ -1,0 +1,374 @@
+{
+  "completed_unix": 1794139794.7513216,
+  "operation": "remove_redundant_intermediate_experiments",
+  "preserved": [
+    "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full",
+    "/home/leejwian1955/hybrid-dard-code-agent/artifacts/ce-only-r32-1200-v1",
+    "/data/hybrid-dard/results/code-generation-tradeoff-20261107",
+    "/data/hybrid-dard/results/code-generation-iterative-20261107"
+  ],
+  "records": [
+    {
+      "bytes": 0,
+      "files": 0,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/canary-r16-ddp-1794064378",
+      "status": "removed",
+      "symlinks": 0
+    },
+    {
+      "bytes": 490263313,
+      "files": 23,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/canary-r16-ddp-1794064395",
+      "status": "removed",
+      "symlinks": 1
+    },
+    {
+      "bytes": 490003829,
+      "files": 17,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/canary-r16-single-retry-1794064272",
+      "status": "removed",
+      "symlinks": 1
+    },
+    {
+      "bytes": 2953565810,
+      "files": 71,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200",
+      "status": "removed",
+      "symlinks": 1
+    },
+    {
+      "bytes": 977,
+      "files": 1,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-rerun",
+      "status": "removed",
+      "symlinks": 0
+    },
+    {
+      "bytes": 30251074,
+      "files": 2056,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-rerun2",
+      "status": "removed",
+      "symlinks": 0
+    },
+    {
+      "bytes": 1967347529,
+      "files": 68,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/lora-r16-400-ddp",
+      "status": "removed",
+      "symlinks": 1
+    },
+    {
+      "bytes": 3905118899,
+      "files": 68,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/lora-r32-400-ddp",
+      "status": "removed",
+      "symlinks": 1
+    },
+    {
+      "bytes": 11777800,
+      "files": 802,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/paired-r16-dev",
+      "status": "removed",
+      "symlinks": 0
+    },
+    {
+      "bytes": 11770570,
+      "files": 802,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/paired-r32-dev",
+      "status": "removed",
+      "symlinks": 0
+    },
+    {
+      "bytes": 2014,
+      "files": 1,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/run_full_from_dev.py",
+      "status": "removed",
+      "symlinks": 0
+    },
+    {
+      "bytes": 2797,
+      "files": 1,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/run_paired_adapter_eval.py",
+      "status": "removed",
+      "symlinks": 0
+    },
+    {
+      "bytes": 2797,
+      "files": 1,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/run_paired_adapter_eval_r32.py",
+      "status": "removed",
+      "symlinks": 0
+    },
+    {
+      "bytes": 89,
+      "files": 1,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/latest_canary_path.txt",
+      "status": "removed",
+      "symlinks": 0
+    },
+    {
+      "bytes": 80,
+      "files": 1,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/latest_ddp_path.txt",
+      "status": "removed",
+      "symlinks": 0
+    },
+    {
+      "bytes": 2094612,
+      "files": 67,
+      "path": "/home/leejwian1955/hybrid-dard-code-agent/__pycache__",
+      "status": "removed",
+      "symlinks": 0
+    },
+    {
+      "bytes": 102822,
+      "files": 6,
+      "path": "/home/leejwian1955/hybrid-dard-code-agent/.pytest_cache",
+      "status": "removed",
+      "symlinks": 0
+    },
+    {
+      "bytes": 883031,
+      "files": 207,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/final_20261111/shard-0/cases",
+      "status": "removed"
+    },
+    {
+      "bytes": 2972144,
+      "files": 207,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/final_20261111/shard-0/generations",
+      "status": "removed"
+    },
+    {
+      "bytes": 874188,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/final_20261111/shard-1/cases",
+      "status": "removed"
+    },
+    {
+      "bytes": 2935510,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/final_20261111/shard-1/generations",
+      "status": "removed"
+    },
+    {
+      "bytes": 863701,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/final_20261111/shard-2/cases",
+      "status": "removed"
+    },
+    {
+      "bytes": 2911862,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/final_20261111/shard-2/generations",
+      "status": "removed"
+    },
+    {
+      "bytes": 882044,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/final_20261111/shard-3/cases",
+      "status": "removed"
+    },
+    {
+      "bytes": 2932672,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/final_20261111/shard-3/generations",
+      "status": "removed"
+    },
+    {
+      "bytes": 883046,
+      "files": 207,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/final_20261112/shard-0/cases",
+      "status": "removed"
+    },
+    {
+      "bytes": 2972136,
+      "files": 207,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/final_20261112/shard-0/generations",
+      "status": "removed"
+    },
+    {
+      "bytes": 874178,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/final_20261112/shard-1/cases",
+      "status": "removed"
+    },
+    {
+      "bytes": 2935482,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/final_20261112/shard-1/generations",
+      "status": "removed"
+    },
+    {
+      "bytes": 863704,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/final_20261112/shard-2/cases",
+      "status": "removed"
+    },
+    {
+      "bytes": 2911886,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/final_20261112/shard-2/generations",
+      "status": "removed"
+    },
+    {
+      "bytes": 882048,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/final_20261112/shard-3/cases",
+      "status": "removed"
+    },
+    {
+      "bytes": 2932632,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/final_20261112/shard-3/generations",
+      "status": "removed"
+    },
+    {
+      "bytes": 883025,
+      "files": 207,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/final_20261113/shard-0/cases",
+      "status": "removed"
+    },
+    {
+      "bytes": 2972128,
+      "files": 207,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/final_20261113/shard-0/generations",
+      "status": "removed"
+    },
+    {
+      "bytes": 874149,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/final_20261113/shard-1/cases",
+      "status": "removed"
+    },
+    {
+      "bytes": 2935503,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/final_20261113/shard-1/generations",
+      "status": "removed"
+    },
+    {
+      "bytes": 863708,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/final_20261113/shard-2/cases",
+      "status": "removed"
+    },
+    {
+      "bytes": 2911916,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/final_20261113/shard-2/generations",
+      "status": "removed"
+    },
+    {
+      "bytes": 882036,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/final_20261113/shard-3/cases",
+      "status": "removed"
+    },
+    {
+      "bytes": 2932625,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/final_20261113/shard-3/generations",
+      "status": "removed"
+    },
+    {
+      "bytes": 933065,
+      "files": 207,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/holdout/shard-0/cases",
+      "status": "removed"
+    },
+    {
+      "bytes": 3007328,
+      "files": 207,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/holdout/shard-0/generations",
+      "status": "removed"
+    },
+    {
+      "bytes": 864283,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/holdout/shard-1/cases",
+      "status": "removed"
+    },
+    {
+      "bytes": 2925207,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/holdout/shard-1/generations",
+      "status": "removed"
+    },
+    {
+      "bytes": 886273,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/holdout/shard-2/cases",
+      "status": "removed"
+    },
+    {
+      "bytes": 2929811,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/holdout/shard-2/generations",
+      "status": "removed"
+    },
+    {
+      "bytes": 885002,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/holdout/shard-3/cases",
+      "status": "removed"
+    },
+    {
+      "bytes": 2938545,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/holdout/shard-3/generations",
+      "status": "removed"
+    },
+    {
+      "bytes": 882250,
+      "files": 207,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/validation/shard-0/cases",
+      "status": "removed"
+    },
+    {
+      "bytes": 2971341,
+      "files": 207,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/validation/shard-0/generations",
+      "status": "removed"
+    },
+    {
+      "bytes": 873352,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/validation/shard-1/cases",
+      "status": "removed"
+    },
+    {
+      "bytes": 2934688,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/validation/shard-1/generations",
+      "status": "removed"
+    },
+    {
+      "bytes": 862926,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/validation/shard-2/cases",
+      "status": "removed"
+    },
+    {
+      "bytes": 2911137,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/validation/shard-2/generations",
+      "status": "removed"
+    },
+    {
+      "bytes": 881213,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/validation/shard-3/cases",
+      "status": "removed"
+    },
+    {
+      "bytes": 2931801,
+      "files": 204,
+      "path": "/home/leejwian1955/hybrid-dard-model-upgrade-20261108/focused-target-r32-1200-full/validation/shard-3/generations",
+      "status": "removed"
+    }
+  ],
+  "removed_report_raw_case_artifacts": true,
+  "schema_version": 1,
+  "status": "completed"
+}

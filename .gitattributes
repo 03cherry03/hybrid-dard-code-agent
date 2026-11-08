@@ -1,0 +1,1 @@
+artifacts/ce-only-r32-1200-v1/adapter/adapter_model.safetensors filter=lfs diff=lfs merge=lfs -text
